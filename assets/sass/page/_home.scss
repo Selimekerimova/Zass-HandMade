@@ -1,0 +1,147 @@
+#swiper {
+  width: 100%;
+
+  .swiper {
+    width: 100%;
+    &::after {
+      background-image: url("../img/ripoff_flip.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100px;
+      position: absolute;
+      top: 190px;
+      z-index: 10;
+      width: 100%;
+      content: "";
+    }
+
+    &::before {
+      background-image: url("../img/ripoff.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100px;
+      position: absolute;
+      bottom: 0;
+      z-index: 7;
+      width: 100%;
+      content: "";
+    }
+    .swiper-wrapper {
+      background-image: url("../img/zass_main_hero33.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      .swiper-slide {
+        height: 100vh;
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .container {
+          padding-top: 9rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          h2 {
+            color: #fff;
+            font-size: 44px;
+            font-weight: 900;
+          }
+          p {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+          }
+          .swiperBtn {
+            font-size: 14px;
+            color: #f3a395;
+            text-transform: capitalize;
+            background-color: #fff;
+            border: 1px solid transparent;
+            padding: 12px 20px;
+            border-radius: 20px;
+            transition: all 0.7s;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-color: rgba($color: #f3a395, $alpha: 0.8);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      color: #fff;
+      margin-top: 60px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    padding-top: 5rem;
+  }
+}
+
+// hero-banner
+#hero-banner {
+  padding: 5rem 0;
+  .hero-banner {
+    padding: 5rem 0;
+    border-bottom: 1px rgba($color: #000000, $alpha: 0.3) dashed;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    .card {
+      border: 0.5px solid rgba($color: #000000, $alpha: 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 1rem;
+      gap: 20px;
+      transition: all 0.7s;
+      i {
+        color: #f3a395;
+        font-size: 3rem;
+      }
+      h4 {
+        font-weight: 600;
+      }
+      p {
+        opacity: 0.7;
+        letter-spacing: 1px;
+        width: 340px;
+      }
+      &:hover {
+        box-shadow: 0 10px 10px rgba($color: #000000, $alpha: 0.2);
+        i {
+          animation: icon 1s;
+        }
+        @keyframes icon {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(0.8);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
