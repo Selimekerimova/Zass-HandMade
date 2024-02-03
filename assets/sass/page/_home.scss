@@ -27,7 +27,7 @@
       content: "";
     }
     .swiper-wrapper {
-      background-image: url("../img/zass_main_hero33.jpg");
+      background-image: url("../img/market_hero1.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -84,12 +84,19 @@
   }
   @media only screen and (max-width: 767px) {
     padding-top: 5rem;
+    .swiper {
+      &::after {
+        top: 40px;
+      }
+    }
   }
 }
 
 // hero-banner
 #hero-banner {
   padding: 5rem 0;
+  background-color: #fff;
+
   .hero-banner {
     padding: 5rem 0;
     border-bottom: 1px rgba($color: #000000, $alpha: 0.3) dashed;
@@ -145,3 +152,119 @@
   }
 }
 
+// product
+#products {
+  padding: 6rem 0;
+  position: relative;
+  &::after {
+    background-image: url("../img/ripoff_flip.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    position: absolute;
+    top: -1px;
+    // z-index: 10;
+    width: 100%;
+    content: "";
+  }
+  &::before {
+    background-image: url("../img/ripoff.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    // z-index: 6;
+    width: 100%;
+    content: "";
+  }
+  .products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    h1 {
+      font-size: 44px;
+      color: #2b3033;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+    .cards {
+      padding: 1rem 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        width: 100%;
+        // aspect-ratio: 1/1;
+        // object-fit: cover;
+
+        img {
+          width: 100%;
+        }
+        .info-card {
+          padding: 10px 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          .productPrice {
+            display: flex;
+            gap: 10px;
+            .oldPrice {
+              text-decoration: line-through;
+            }
+          }
+
+          .proses {
+            display: flex;
+            .addToCardBtn {
+              border: 1px dashed #f3a395;
+              padding: 10px;
+              background-color: #fff;
+              color: #f3a395;
+              border-radius: 20px;
+              text-transform: uppercase;
+              transition: all 0.6s;
+              &:hover {
+                background-color: #f3a395;
+                color: #fff;
+              }
+            }
+            i {
+              border: 1px dashed #f3a395;
+              height: 30px;
+              width: 30px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #f3a395;
+            }
+          }
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    .loadMore {
+      padding: 10px 20px;
+      text-transform: capitalize;
+      background-color: #fff;
+      color: #d68630;
+      font-size: 18px;
+      border: 1px solid #d68630;
+      border-radius: 20px;
+      transition: all 0.7s;
+      &:hover {
+        color: #fff;
+        background-color: #d68630;
+      }
+    }
+  }
+}

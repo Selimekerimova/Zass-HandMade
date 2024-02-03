@@ -20,5 +20,4 @@ liElem.forEach((item) => {
 // scroll
 window.addEventListener("scroll", function () {
   header.classList.toggle("scrollHeader", scrollY > 500);
-  console.log(scrollY);
 });

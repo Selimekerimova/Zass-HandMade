@@ -1,0 +1,62 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
+      "productName": " Easter Baby Gift",
+      "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
+      "price": 1.75,
+      "oldPrice": 3.5,
+      "category": "Baby"
+    },
+    {
+      "id": "2",
+      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
+      "productName": " Easter Baby Gift",
+      "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
+      "price": 1.75,
+      "oldPrice": 3.5,
+      "category": "Accessories"
+    },
+    {
+      "id": "3",
+      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
+      "productName": " Easter Baby Gift",
+      "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
+      "price": 1.75,
+      "oldPrice": 3.5,
+      "category": "Art & Collectibles"
+    },
+    {
+      "id": "4",
+      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
+      "productName": " Easter Baby Gift",
+      "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
+      "price": 1.75,
+      "oldPrice": 3.5,
+      "category": "Home"
+    }
+  ],
+
+  
+  "customer": [
+    {
+      "id": "1",
+      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
+      "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
+      "contact": "email@email.com"
+    },
+    {
+      "id": "2",
+      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
+      "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
+      "contact": "email@email.com"
+    },
+    {
+      "id": "3",
+      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
+      "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
+      "contact": "email@email.com"
+    }
+  ]
+}

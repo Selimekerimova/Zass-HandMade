@@ -145,6 +145,7 @@ a {
 
 body {
   font-family: "Raleway", sans-serif;
+  background-color: #ecddcd;
 }
 
 input {
@@ -182,7 +183,6 @@ header .header {
   gap: 10px;
 }
 header .header nav {
-  border-top: 1px solid #fff;
   padding: 10px 0;
   display: flex;
   align-items: center;
@@ -196,6 +196,9 @@ header .header nav ul {
 }
 header .header nav ul li {
   position: relative;
+}
+header .header nav ul li a {
+  transition: all 0.4s;
 }
 header .header nav ul li a:hover {
   color: #f3a395;
@@ -237,17 +240,13 @@ header .header nav ul li.active {
 }
 header .header nav ul li .drapdown {
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: -15px;
+  display: none;
   background-color: #fff;
-  visibility: hidden;
-  z-index: 11;
   width: 200px;
 }
 header .header nav ul li .drapdown li {
   border-bottom: 1px solid rgba(17, 17, 17, 0.09);
+  transition: all 0.7s;
 }
 header .header nav ul li .drapdown li:last-child {
   border-bottom: none;
@@ -267,10 +266,15 @@ header .header nav ul li a {
 }
 header .header nav ul li:hover .drapdown {
   top: 100%;
-  visibility: unset;
+  position: absolute;
+  left: -15px;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
 }
 header .header nav ul li:hover .drapdown li {
-  margin: 1rem 0;
+  width: 90%;
+  padding: 10px 20px;
 }
 header .header nav .fa-bars {
   font-size: 1.2rem;
@@ -281,6 +285,9 @@ header .header nav .fa-bars {
   display: none;
 }
 @media screen and (max-width: 767px) {
+  header {
+    height: 6rem;
+  }
   header .header .logo img {
     width: 100px;
   }
@@ -299,15 +306,15 @@ header .header nav .fa-bars {
     width: 65%;
     display: flex;
     flex-direction: column;
+    transition: all 0.7s;
     height: 100vh;
     z-index: 3;
   }
   header .header nav ul li:hover .drapdown {
     display: block;
     top: 0;
-    left: 150px;
+    left: 30px;
     height: unset;
-    width: 100%;
   }
   header .header nav ul li .icons {
     position: absolute;
@@ -354,7 +361,7 @@ header .header nav .fa-bars {
   content: "";
 }
 #swiper .swiper .swiper-wrapper {
-  background-image: url("../img/zass_main_hero33.jpg");
+  background-image: url("../img/market_hero1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -410,10 +417,14 @@ header .header nav .fa-bars {
   #swiper {
     padding-top: 5rem;
   }
+  #swiper .swiper::after {
+    top: 40px;
+  }
 }
 
 #hero-banner {
   padding: 5rem 0;
+  background-color: #fff;
 }
 #hero-banner .hero-banner {
   padding: 5rem 0;
@@ -470,4 +481,116 @@ header .header nav .fa-bars {
   #hero-banner .hero-banner {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+#products {
+  padding: 6rem 0;
+  position: relative;
+}
+#products::after {
+  background-image: url("../img/ripoff_flip.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  position: absolute;
+  top: -1px;
+  width: 100%;
+  content: "";
+}
+#products::before {
+  background-image: url("../img/ripoff.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  content: "";
+}
+#products .products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#products .products h1 {
+  font-size: 44px;
+  color: #2b3033;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+#products .products .cards {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+#products .products .cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+}
+#products .products .cards .card img {
+  width: 100%;
+}
+#products .products .cards .card .info-card {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#products .products .cards .card .info-card .productPrice {
+  display: flex;
+  gap: 10px;
+}
+#products .products .cards .card .info-card .productPrice .oldPrice {
+  text-decoration: line-through;
+}
+#products .products .cards .card .info-card .proses {
+  display: flex;
+}
+#products .products .cards .card .info-card .proses .addToCardBtn {
+  border: 1px dashed #f3a395;
+  padding: 10px;
+  background-color: #fff;
+  color: #f3a395;
+  border-radius: 20px;
+  text-transform: uppercase;
+  transition: all 0.6s;
+}
+#products .products .cards .card .info-card .proses .addToCardBtn:hover {
+  background-color: #f3a395;
+  color: #fff;
+}
+#products .products .cards .card .info-card .proses i {
+  border: 1px dashed #f3a395;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f3a395;
+}
+@media only screen and (max-width: 767px) {
+  #products .products .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+#products .products .loadMore {
+  padding: 10px 20px;
+  text-transform: capitalize;
+  background-color: #fff;
+  color: #d68630;
+  font-size: 18px;
+  border: 1px solid #d68630;
+  border-radius: 20px;
+  transition: all 0.7s;
+}
+#products .products .loadMore:hover {
+  color: #fff;
+  background-color: #d68630;
 }/*# sourceMappingURL=main.css.map */
