@@ -1,37 +1,20 @@
 const cards = document.querySelector(".cards"),
-  allProductBtn = document.querySelector(".allProductBtn");
- 
-let limit=3;
+  loadMoreBtn = document.querySelector(".loadMore");
+
+let limit = 3;
 let products;
-//  Initialize Swiper
-var swiper = new Swiper(".mySwiper", {
-  cssMode: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  mousewheel: true,
-  keyboard: true,
-});
-// // scroll reveral
-ScrollReveal().reveal(".swiper-content", { delay: 2000});
-// get data
 async function getAllData(endpoint) {
   try {
     let res = await axios(`${BASE_URL}/${endpoint}`);
     // console.log(res.data);
-    products=res.data
-    drawCard(res.data.splice(0,limit))
+    products = res.data;
+    drawCard(res.data.slice(0, limit));
   } catch (error) {
     console.log(error);
   }
 }
 getAllData("products");
 
-// drawCard
 function drawCard(data) {
   cards.innerHTML = "";
   data.forEach((element) => {
@@ -48,10 +31,10 @@ function drawCard(data) {
     let favIcon = document.createElement("i");
 
     image.src = `${element.img}`;
-    productName.innerHTML=`${element.productName}`
-    productPrice.innerHTML=`${element.price}`
-    productOldPrice.innerHTML=`${element.oldPrice}`
-    addToCardBtn.innerHTML="Add to card"
+    productName.innerHTML = `${element.productName}`;
+    productPrice.innerHTML = `$${element.price}`;
+    productOldPrice.innerHTML =`${element.oldPrice}`
+    addToCardBtn.innerHTML = "Add to card";
 
     cardDiv.className = "card";
     cardInfoDiv.className = "info-card";
@@ -70,8 +53,11 @@ function drawCard(data) {
   });
 }
 
-
-// all product 
-allProductBtn.addEventListener("click",function(){
-window.location.href="allProducts.html"
-})
+// load more
+loadMoreBtn.addEventListener("click", function () {
+  limit += 3;
+  drawCard(products.slice(0, limit));
+  if (limit >= products.length) {
+    loadMoreBtn.remove();
+  }
+});

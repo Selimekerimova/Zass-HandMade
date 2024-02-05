@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>My Account</title>
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,17 +19,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Link Swiper's CSS  -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <!-- main css -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- common js -->
-    <script defer src="./assets/js/common.js"></script>
+    <!-- scroll reveral -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!-- axios cdn -->
     <script
       defer
@@ -38,10 +29,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <!-- scroll reveral -->
-    <script src="https://unpkg.com/scrollreveal"></script> 
-    <!-- main js -->
-    <script defer src="./assets/js/main.js"></script>
+    <!-- scroll reveral
+    <script src="https://unpkg.com/scrollreveal"></script> -->
+    <!-- main css -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <!-- common js -->
+    <script defer src="./assets/js/common.js"></script>
+    <!-- singup-login js -->
+    <script defer src="./assets/js/singup-login.js"></script>
   </head>
   <body>
     <!-- header -->
@@ -112,83 +108,131 @@
       </div>
     </header>
 
-    <!-- swiper -->
-    <div id="swiper">
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="container swiper-content">
-              <img src="./assets/img/heart_white_big-130x130.png" alt="" />
-              <h2>Best Handmade Goods</h2>
-              <p>Made with love and passion.</p>
-              <button class="swiperBtn">Wiev all products</button>
+    <!-- sign up - login -->
+    <!-- <div id="account">
+      <div class="content">
+        <div class="container">
+          <div class="btns">
+            <button class="registerBtn accountBtn active">Register</button>
+            <button class="loginBtn accountBtn">Login</button>
+          </div>
+          <form id="form-register" class="form register active-form">
+            <h1>Register</h1>
+            <div class="input-control">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" name="username" class="username" />
+              <label for="username">Username</label>
+              <div class="error"></div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="container">
-              <img src="./assets/img/heart_white_big-130x130.png" alt="" />
-              <h2>Find Something You Love</h2>
-              <p>…and personalize it to be 100% yours.</p>
-              <button class="swiperBtn">Wiev all products</button>
+            <div class="input-control">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" name="email" class="email" />
+              <label for="email">Email</label>
+              <div class="error"></div>
             </div>
-          </div>
+            <div class="input-control">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" name="password" class="password" />
+              <label for="password">Password</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" name="password2" class="password2" />
+              <label for="password2">Password again</label>
+              <div class="error"></div>
+            </div>
+            <button type="submit" class="form-btn sign-up">Sign Up</button>
+          </form>
+
+          <form id="form-login" class="form login">
+            <h1>Login</h1>
+            <div class="input-control">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" name="email" class="email" />
+              <label for="email">Email</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" name="password" class="password" />
+              <label for="password">Password</label>
+              <div class="error"></div>
+            </div>
+            <div class="remember-forget">
+              <label> <input type="checkbox" />Remember me</label>
+              <a> Forget Password?</a>
+            </div>
+            <button type="submit" class="form-btn login">Login</button>
+          </form>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
       </div>
-    </div>
-    <!-- hero-banner -->
-    <div id="hero-banner">
+    </div> -->
+
+    <div id="account">
       <div class="container">
-        <div class="hero-banner">
-          <div class="card">
-            <i class="fa-regular fa-heart"></i>
-            <h4>Find something you love</h4>
-            <p>Our marketplace is a world of vintage and handmade goods</p>
-          </div>
+        <div class="form form-container">
+          <!-- login form -->
+          <form class="login">
+            <h2>Login</h2>
+            <div class="input-control">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" name="email" class="email" />
+              <label for="email">Email</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" name="password" class="password" />
+              <label for="password">Password</label>
+              <div class="error"></div>
+            </div>
+            <div class="remember-forget">
+              <label> <input type="checkbox" />Remember me</label>
+              <a> Forget Password?</a>
+            </div>
+            <button type="submit" class="loginBtn">Login</button>
+            <div class="login-signup">
+              Don't have an account <a id="signup" class="signup">Signup</a>
+            </div>
+          </form>
+          <!-- sign up form -->
+          <form class="register">
+            <h2>Signup</h2>
 
-          <div class="card">
-            <i class="fa-solid fa-gift"></i>
-            <h4>Find something you love</h4>
-            <p>Our marketplace is a world of vintage and handmade goods</p>
-          </div>
+            <div class="input-control">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" name="username" class="username" />
+              <label for="username">Username</label>
+              <div class="error"></div>
+            </div>
 
-          <div class="card">
-            <i class="fa-solid fa-lock"></i>
-            <h4>Buy and sell with confidence</h4>
-            <p>Our marketplace is a world of vintage and handmade goods</p>
-          </div>
-        </div>
-      </div>
-    </div>
+            <div class="input-control">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" name="email" class="email" />
+              <label for="email">Email</label>
+              <div class="error"></div>
+            </div>
 
-    <!--products  -->
-    <div id="products">
-      <div class="container">
-        <div class="products">
-          <h1>New Arrivals</h1>
-          <div class="cards">
-            <!-- <div class="card">
-              <img src="./assets/img/home-03-1920x1028.jpg" alt="" />
+            <div class="input-control">
+              <i class="fa-solid fa-eye-slash"></i>
+              <input type="password" name="password" class="password" />
+              <label for="password">Password</label>
+              <div class="error"></div>
+            </div>
 
-              <div class="info-card">
-                <h2>letter blocks</h2>
-                <div class="productPrice">
-                  <p>$40.00</p>
-                  <p class="oldPrice">$40.00</p>
-                </div>
-                <div class="proses">
-                  <button class="addToCardBtn">add to card</button>
-                  <i class="fa-solid fa-eye"></i>
-                  <i class="fa-regular fa-heart"></i>
-                </div>
+            <div class="input-control">
+              <i class="fa-solid fa-eye-slash"></i>
+              <input type="password" name="password2" class="password2" />
+              <label for="password2">Password again</label>
+              <div class="error"></div>
+            </div>
 
-              </div>
-
-            </div> -->
-          </div>
-          <button class="allProductBtn">Wiev all products</button>
+            <button type="submit" class="registerBtn">Signup</button>
+            <div class="login-signup">
+              Alredy have an account? <a id="login">Login</a>
+            </div>
+          </form>
         </div>
       </div>
     </div>

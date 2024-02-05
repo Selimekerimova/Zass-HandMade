@@ -2,43 +2,231 @@
   "products": [
     {
       "id": "1",
-      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
+      "img": "./assets/img/products-image/Capture2.PNG",
       "productName": " Easter Baby Gift",
       "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
       "price": 1.75,
       "oldPrice": 3.5,
-      "category": "Baby"
+      "category": "Toys"
     },
     {
       "id": "2",
-      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
-      "productName": " Easter Baby Gift",
-      "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
-      "price": 1.75,
-      "oldPrice": 3.5,
-      "category": "Accessories"
+      "img": "./assets/img/products-image/Capture1.PNG",
+      "productName": "Highland Cow Crochet Pattern",
+      "description": "Highland Cow Crochet Pattern, Bull Cow Large Amigurumi PDF Instruction Tutorial with Cow Bell Collar",
+      "price": 2.9,
+      "oldPrice": 5.8,
+      "category": "Toys"
     },
     {
       "id": "3",
-      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
-      "productName": " Easter Baby Gift",
-      "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
-      "price": 1.75,
-      "oldPrice": 3.5,
-      "category": "Art & Collectibles"
+      "img": "./assets/img/products-image/Capture3.PNG",
+      "productName": " fluffy Warawara",
+      "description": "fluffy warawara plushie inspired in the Ghibli movie",
+      "price": 27,
+      "oldPrice": "",
+      "category": "Toys"
     },
     {
       "id": "4",
-      "img": "https://i.etsystatic.com/36819687/r/il/cbc86a/5133125756/il_794xN.5133125756_qnry.jpg",
-      "productName": " Easter Baby Gift",
-      "description": "Bunny Soft Rattle Crochet PDF Pattern, Easter Baby Gift, Spring Rabbit First Toy DIY, Hare Toy English Tutorial for Beginners, Coney",
-      "price": 1.75,
-      "oldPrice": 3.5,
+      "img": "./assets/img/products-image/Capture4.PNG",
+      "productName": "Amigurumi Baby Girl with Bunny Motif Backpack,Handmade Knitted Doll",
+      "description": "Introducing our adorable Amigurumi Baby Girl with Bunny Motif Backpack. This handmade knitted doll is the perfect gift for any occasion. Crafted with love and attention to detail, each doll is unique and brings a touch of charm to any space. With its cute bunny motif backpack, this Amigurumi Baby Girl is not only a toy, but also a practical accessory for little ones to carry their small treasures. Made from high-quality yarn, this knitted doll is soft, huggable, and safe for children of all ages. Whether you're looking for a special present or a delightful addition to your collection, our Amigurumi Baby Girl with Bunny Motif Backpack is sure to bring joy and create cherished memories.",
+      "price": 63.0,
+      "oldPrice": 105.0,
+      "category": "Toys"
+    },
+    {
+      "id": "5",
+      "img": "./assets/img/products-image/Capture5.PNG",
+      "productName": " Personalised dummy clip",
+      "description": "Personalised dummy clip, Silicone dummy clip, Dummy clip, Baby pacifier clip, Pacifier holder, Baby shower gift, Heart clip, Pink & Grey",
+      "price": 11.7,
+      "oldPrice": 14.63,
+      "category": "Toys"
+    },
+    {
+      "id": "6",
+      "img": "./assets/img/products-image/Capture6.PNG",
+      "productName": " Big Booty Turtle",
+      "description": "When you buy this turtle the color of the turtle will stay the same, but you do have the option to change the color of the shell! The shell color that the turtle currently has on I count as the gold option and it is the primary color of shell you will receive unless you specifically pick a different color.",
+      "price": 25.0,
+      "oldPrice": "",
+
+      "category": "Toys"
+    },
+    {
+      "id": "7",
+      "img": "./assets/img/products-image/Capture7.PNG",
+      "productName": " Snail",
+      "description": "PDF GERMAN crochet pattern for the snail 'Josi',design by Nadelkunst.Handmade by Anne",
+      "price": 10.49,
+      "oldPrice": "",
+      "category": "Toys"
+    },
+    {
+      "id": "8",
+      "img": "./assets/img/products-image/Capture8.PNG",
+      "productName": "Personalized Wooden Money Box",
+      "description": "Personalized Wooden Money Box | FRIENDS | with name printed in color ideal as a gift birthday Christmas enrollment piggy bank",
+      "price": 23.79,
+      "oldPrice": 31.72,
+      "category": "Toys"
+    },
+    {
+      "id": "10",
+      "img": "./assets/img/products-image/Capture10.PNG",
+      "productName": "Handmade Ceramic Fox Tea Light Holder",
+      "description": "These adorable handmade ceramic tea light holders are perfect as a fun and unique gift. Cute home decoration.All of my ceramics are handmade in my small studio in Umbria, Italy. Made of Italian white earthenware clay, entirely shaped and painted by hand. Each item is lovingly designed and made by me from start to finish.Each piece is unique, slightly irregular in shape, it may have imperfections on the surface or colour and it may not be identical to the one pictured.",
+      "price": 24.97,
+      "oldPrice": "",
       "category": "Home"
+    },
+    {
+      "id": "11",
+      "img": "./assets/img/products-image/Capture11.PNG",
+      "productName": "Loss of Pet Sympathy Gift",
+      "description": "Honor the everlasting bond with our Dog Memorial Suncatcher. A heartwarming tribute to your beloved companion, this suncatcher captures the spirit and loyalty of dogs. The elegantly crafted design features a dog silhouette surrounded by radiant hues, beautifully reflecting sunlight. As beams of light dance through, it creates a touching memorial in any space. A thoughtful way to remember a cherished pet, this suncatcher serves as a daily reminder of the love shared and the memories created. Keep their memory alive and brighten your surroundings with this meaningful keepsake, a heartfelt gift to provide solace during times of loss.",
+      "price": 19.99,
+      "oldPrice": 28.56,
+      "category": "Home"
+    },
+    {
+      "id": "12",
+      "img": "./assets/img/products-image/Capture12.PNG",
+      "productName": "Dandelion Flower Night Light",
+      "description": "Dandelion Flower Night Light, Flower Epoxy Resin lamp,Resin Art Lamp, Custom Night Light, Personalized Night Light,handmade gift,home decor Dandelion flowers bring back many childhood memories and are loved by young people. Dubbed the angel flying in the wind, the dandelion flower, though small and fragile, has a very special meaning. It is a symbol of the purest, purest and brightest love. More specifically, giving dandelion flowers to your loved one on special occasions will help the other person feel sincere and deep feelings. Not only that, this flower is also a symbol of Fight through life's challenges and win on the other side of the road. Because in order to continue the life of the sprouts, they must go through the pain of letting the wind separate the small flowers and carry them to new lands. Because of those sacred meanings, the lamp This dandelion flower will be a perfect gift for your loved one.",
+      "price": 39.0,
+      "oldPrice": 78.0,
+      "category": "Home"
+    },
+    {
+      "id": "13",
+      "img": "./assets/img/products-image/Capture13.PNG",
+      "productName": "The Uncanny Collection - Handmade ceramic vase",
+      "description": " home décor, garden décor, indoor outdoor vase. Pottery gifts. Unique birthday gifts. Eyes.",
+      "price": 34.7,
+      "oldPrice": 38.9,
+      "category": "Home"
+    },
+    {
+      "id": "14",
+      "img": "./assets/img/products-image/Capture14.PNG",
+      "productName": "Personalized baby night light",
+      "description": " animal lamp, baby gift birth, easter gift, christening gift, children's room, birthday gift, bedside lamp During the day, our night lights are excellent decorative pieces for children's rooms. They not only add warmth and whimsy to the space but also become lovely companions in children's lives.",
+      "price": 24.11,
+      "oldPrice": 35.99,
+      "category": "Home"
+    },
+    {
+      "id": "15",
+      "img": "./assets/img/products-image/Capture15.PNG",
+      "productName": " Custom Night Light as Valentines Day Gift",
+      "description": "Anniversary Gifts - Romantic Gift for Couple - Gift for Him - Names and Date - Engagement Gifts.It's a very adorable decoration item in your room during the day with cozy look.It sparkles the room in the night with its light, like a touch by a magic wand! For order preparation we need 3-7 days. But usually we do everything possible to send it faster.Please notice that we prepare and ship only in BUSINESS days from Monday till Friday. NOT including weekends.",
+      "price": 31.99,
+      "oldPrice": 63.98,
+      "category": "Home"
+    },
+    {
+      "id": "16",
+      "img": "./assets/img/products-image/Capture16.PNG",
+      "productName": "SCOTTISH RAIN Candle |",
+      "description": "SCOTTISH RAIN Candle, created to evoke the well known scent and ambience just after the rain. For those who live in Scotland or indeed those who have visited it is an unmistakable smell. Available in our striking matt black taster tins (also currently available in a rose gold tin option), and our elegant full size boxed matt white glass jars and finished with glow, sow n grow wildflower seeded candle toppers so you can reuse your candle tin/jar.",
+      "price": 10.64,
+      "oldPrice": "",
+      "category": "Home"
+    },
+    {
+      "id": "17",
+      "img": "./assets/img/products-image/Capture17.PNG",
+      "productName": "Raccoon Patterned Pen Holder Office Stationary Gifts for Child",
+      "description": "Raccoon Patterned Pen Holder Office Stationary Gifts for Child. Inspired by the raccoon pattern, this wooden pencil holder shows the perfect combination of dexterity and cuteness.",
+      "price": 10.06,
+      "oldPrice": 31.72,
+      "category": "Home"
+    },
+    {
+      "id": "18",
+      "img": "./assets/img/products-image/Capture18.PNG",
+      "productName": "Set of 5 unique handcrafted wooden vase",
+      "description": "set of 5 unique handcrafted wooden vase, handmade elmwood flower pot centerpiece, abstract form art, hand-carved solid wood boho mini vaseProduct Size : Heights: 4-8 cmWidth: 6 cm The product is made of premium elmwood and each premium part is handcrafted separately, so there might be differences in the surface of the product. These products can be presented as a gift for a new house or a gift to your neighbor, friends, and parents.",
+      "price": 43.79,
+      "oldPrice": 52.6,
+      "category": "Home"
+    },
+    {
+      "id": "19",
+      "img": "./assets/img/products-image/Capture19.PNG",
+      "productName": "CUSTOM WATERCOLOUR PORTRAIT,",
+      "description": "Personalised gift, Watercolour painting, Family Portrait, Wedding Gift, Valentines day gift, Mothers day All digital files will be ready in 5-7 days(or sooner depends on current orders), please allow extra time for the printing and frame item with Standard delivery.Please understand the delivery service is out of sellers control, there could be delay, depends on season/weather condition/covid restrictions      ",
+      "price": 20.26,
+      "oldPrice": 27.72,
+      "category": "Art"
+    },
+    {
+      "id": "20",
+      "img": "./assets/img/products-image/Capture20.PNG",
+      "productName": "Oil Paintings of Ireland",
+      "description": "Oil Paintings of Ireland, Donegal Landscape Print, Art Prints Donegal Ireland, Irish Landscape Prints, Abstract Oil Paintings, Digital Print This contemporary oil painting captures the mesmerising and breathtaking beauty of a sunset over the Irish coast in Donegal, Ireland. This artwork is part of a set of four panoramic prints, each inspired by a digital oil painting that reveals the moment when the sun breaks through the clouds, casting dramatic light upon the beach and the distant mountains.Welcome to Feed My Imagination, where we strive to capture the boundless beauty of our unique and mysterious landscape and immortalise it through our museum-quality digital prints, available for download or as physical prints. Each piece is meticulously crafted with care to capture the very essence of the landscape and is exclusively available in our shop.Canson Arches Aquarelle Rag 310gsm. With a traditional watercolour base, a natural grain, and a felt-marked finish, the pure white produces prints with superb colour rendition and deep blacks, offering a superb tonal range.",
+      "price": 86.48,
+      "oldPrice": "",
+      "category": "Art"
+    },
+    {
+      "id": "21",
+      "img": "./assets/img/products-image/Capture21.PNG",
+      "productName": "Personalized Wooden Money Box",
+      "description": "Personalized Wooden Money Box | FRIENDS | with name printed in color ideal as a gift birthday Christmas enrollment piggy bank",
+      "price": 23.79,
+      "oldPrice": 31.72,
+      "category": "Art"
+    },
+    {
+      "id": "22",
+      "img": "./assets/img/products-image/Capture22.PNG",
+      "productName": "Hills of Donegal Oil Painting limited edition print by Irish artist Chris Connolly",
+      "description": "Hills of Donegal Oil Painting limited edition print by Irish artist Chris Connolly/Irish art/Ireland painting/ Irish landscape art/ Ireland. The Collection is of limited edition and there will only be 50 print runs per location . Each print will be a collectors item as no reprint will occur. Every print will be number and hand signed by the artist.This is UNFRAMED, but if you require assistance on where to acquire frames to fit, Please drop me a message and I will happy to help!      ",
+      "price": 43.71,
+      "oldPrice": 59.71,
+      "category": "Art"
+    },
+    {
+      "id": "23",
+      "img": "./assets/img/products-image/Capture23.PNG",
+      "productName": "Connemara",
+      "description": "Connemara, Ireland, Watercolour Print, Irish, Landscape, Nature, Lake, Travel, Souvenir, Adventure, Countryside, Painting, Art print .: Giclee Print    .: Enhanced Matte Art Paper .: 200gsm.: High image quality and detail .: NB! For indoor use only",
+      "price": 14.97,
+      "oldPrice": 16.57,
+      "category": "Art"
+    },
+    {
+      "id": "24",
+      "img": "./assets/img/products-image/Capture24.PNG",
+      "productName": "Obsolete sailing ship on the high seas with beautiful waves",
+      "description": "This intoxicating sailing ship painting, brings a calming effect to any room in your home with its soothing colors. This print of an intoxicating natural backdrop is perfect for rooms with a bold elegance that makes it an iconic centerpiece for you.   Oil painting, rustic art print, marine art, printable wall art, instant digital download.      This listing is for an instant download.This offer is for the printable digital image files (jpg) only. No physical item will be shipped.   Cracks, worn textures, and grain imperfections contained in this artwork have not been intentionally corrected. Necessary corrections have been made so that you can make the best possible use of the painting. Please check the close-ups.",
+      "price": 6.09,
+      "oldPrice": "",
+      "category": "Art"
+    },
+    {
+      "id": "25",
+      "img": "./assets/img/products-image/Capture25.PNG",
+      "productName": "Easter Bunnies Printable Wall Art",
+      "description": "Easter Bunnies Printable Wall Art, Classy Easter Decor Print, Antique Moody Rabbit Animal Painting, Vintage Painting, Instant Download |A138",
+      "price": 3.18,
+      "oldPrice": 6.36,
+      "category": "Art"
+    },
+    {
+      "id": "26",
+      "img": "./assets/img/products-image/Capture26.PNG",
+      "productName": "The beauty of the winter",
+      "description": "The Beauty of Winter: Is Contemporary Art poster or canvas for Instant Download, Digital Printable Art for Wall Decoration.Files are available immediately after purchase.      IMPORTANT NOTICE:      This is a digital product unique. You will not receive a physical product. You will only download a digital product.The files can be downloaded onto your computer. The link may not work on smartphone or a tablet.      *****This item is a DIGITAL download item, NO PHYSICAL item will be shipped to your address.      *****Your purchase does not include a frame , or any other framing-related materials. *****Of course, when you buy, you receive the original image, at the best quality and without copyright inserted in the image, as in the presentation images in the ad.   SHORT Few Info about...      This painting It is a personal creation, unique.     I am an easel artist in oil painting ,with uninterrupted activity in the field for over 25 years .But occasionally ,from 2010 more exactly I also do digital art, Metaverse SL -OS at a professional level with the most advanced technology equipment.     For those interested, I will also attach a short biographical brochure, with essential data about me and my activity in the world of art, in each sale.      It is a creation of digital art, so ,is not an  . Digital art is sometimes created with more finesse than the real, physical one, because you work a lot in pixels and complexe tools for design, and this can involve whole hours or days of continuous artwork, until the work reaches the state of final finishing.    This creation is signed ,in left side down in black.This Digital art painting was finished in year 2022.",
+      "price": 2.27,
+      "oldPrice": 6.36,
+      "category": "Art"
     }
   ],
-
-  
   "customer": [
     {
       "id": "1",

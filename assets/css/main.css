@@ -196,47 +196,15 @@ header .header nav ul {
 }
 header .header nav ul li {
   position: relative;
+  transition: all 0.4s;
+  border: 3px solid transparent;
 }
 header .header nav ul li a {
+  border-bottom: 3px solid transparent;
   transition: all 0.4s;
 }
 header .header nav ul li a:hover {
   color: #f3a395;
-}
-header .header nav ul li.icons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-header .header nav ul li.icons a .fa-solid {
-  font-size: 1.3rem;
-  color: #887f6e;
-  transition: all 0.5s;
-  position: relative;
-}
-header .header nav ul li.icons a .fa-solid .favCount,
-header .header nav ul li.icons a .fa-solid .basketCount {
-  width: 25px;
-  height: 25px;
-  font-size: 10px;
-  position: absolute;
-  top: -20px;
-  left: 8px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f3a395;
-  color: #fff;
-}
-header .header nav ul li.icons a .fa-solid .favCount {
-  background-color: #111;
-}
-header .header nav ul li.icons a .fa-solid:hover {
-  color: #f3a395;
-}
-header .header nav ul li.active {
-  border-bottom: 3px solid #f3a395;
 }
 header .header nav ul li .drapdown {
   padding: 1rem;
@@ -264,6 +232,9 @@ header .header nav ul li a {
   font-weight: 600;
   transition: all 0.6s;
 }
+header .header nav ul li:hover {
+  border-bottom: 3px solid #f3a395;
+}
 header .header nav ul li:hover .drapdown {
   top: 100%;
   position: absolute;
@@ -275,6 +246,38 @@ header .header nav ul li:hover .drapdown {
 header .header nav ul li:hover .drapdown li {
   width: 90%;
   padding: 10px 20px;
+}
+header .header nav ul .icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .header nav ul .icons li a .fa-solid {
+  font-size: 1.3rem;
+  color: #887f6e;
+  transition: all 0.5s;
+  position: relative;
+}
+header .header nav ul .icons li a .fa-solid .favCount,
+header .header nav ul .icons li a .fa-solid .basketCount {
+  width: 25px;
+  height: 25px;
+  font-size: 10px;
+  position: absolute;
+  top: -20px;
+  left: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3a395;
+  color: #fff;
+}
+header .header nav ul .icons li a .fa-solid .favCount {
+  background-color: #111;
+}
+header .header nav ul .icons li a .fa-solid:hover {
+  color: #f3a395;
 }
 header .header nav .fa-bars {
   font-size: 1.2rem;
@@ -316,10 +319,9 @@ header .header nav .fa-bars {
     left: 30px;
     height: unset;
   }
-  header .header nav ul li .icons {
-    position: absolute;
-    right: 50px;
-    top: 20px;
+  header .header nav ul .icons {
+    display: flex;
+    gap: 10px;
   }
   header .header nav.responsive-menu ul {
     left: -30px;
@@ -337,6 +339,7 @@ header .header nav .fa-bars {
 }
 #swiper .swiper {
   width: 100%;
+  position: relative;
 }
 #swiper .swiper::after {
   background-image: url("../img/ripoff_flip.png");
@@ -493,7 +496,7 @@ header .header nav .fa-bars {
   background-position: center;
   height: 100px;
   position: absolute;
-  top: -1px;
+  top: 0;
   width: 100%;
   content: "";
 }
@@ -534,6 +537,9 @@ header .header nav .fa-bars {
 }
 #products .products .cards .card img {
   width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #products .products .cards .card .info-card {
   padding: 10px 0;
@@ -542,12 +548,22 @@ header .header nav .fa-bars {
   align-items: center;
   gap: 10px;
 }
+#products .products .cards .card .info-card h2 {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
 #products .products .cards .card .info-card .productPrice {
   display: flex;
   gap: 10px;
 }
+#products .products .cards .card .info-card .productPrice p {
+  font-weight: bold;
+  font-size: 18px;
+}
 #products .products .cards .card .info-card .productPrice .oldPrice {
   text-decoration: line-through;
+  opacity: 0.5;
 }
 #products .products .cards .card .info-card .proses {
   display: flex;
@@ -580,7 +596,7 @@ header .header nav .fa-bars {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-#products .products .loadMore {
+#products .products .allProductBtn {
   padding: 10px 20px;
   text-transform: capitalize;
   background-color: #fff;
@@ -590,7 +606,261 @@ header .header nav .fa-bars {
   border-radius: 20px;
   transition: all 0.7s;
 }
-#products .products .loadMore:hover {
+#products .products .allProductBtn:hover {
   color: #fff;
   background-color: #d68630;
+}
+
+#account {
+  background-image: url("../img/home-03-1920x1028.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 8rem;
+  position: relative;
+  height: 100vh;
+}
+#account::before {
+  background-image: url("../img/ripoff.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  content: "";
+}
+#account::after {
+  background-image: url("../img/ripoff_flip.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  position: absolute;
+  top: 25vh;
+  left: 0;
+  width: 100%;
+  content: "";
+}
+#account .form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+#account .form-container form {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  width: 400px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  gap: 20px;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+#account .form-container form h2 {
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+}
+#account .form-container form .input-control {
+  width: 90%;
+  border-bottom: 2px solid #fff;
+  position: relative;
+}
+#account .form-container form .input-control input {
+  width: 89%;
+  height: 30px;
+  border: none;
+  padding: 0 5px 0 5px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1em;
+}
+#account .form-container form .input-control input:focus ~ label,
+#account .form-container form .input-control input :valid ~ label {
+  top: -12px;
+}
+#account .form-container form .input-control .fa-solid {
+  position: absolute;
+  right: 10px;
+  color: #fff;
+  top: 30%;
+}
+#account .form-container form .input-control label {
+  position: absolute;
+  top: 30%;
+  left: 5px;
+  transition: all 0.5s;
+  color: #fff;
+}
+#account .form-container form .remember-forget {
+  margin: -15px 0 15px;
+  font-size: 15px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 10px 0;
+}
+#account .form-container form .remember-forget label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#account .form-container form button {
+  width: 90%;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 15px;
+  color: #111;
+  font-weight: 500;
+}
+#account .form-container form .login-signup {
+  font-size: 15px;
+  color: #fff;
+}
+#account .form-container form .login-signup a {
+  font-weight: 600;
+}
+#account .form-container .register {
+  display: none;
+}
+#account .form-container.active .register {
+  display: flex;
+  flex-direction: column;
+}
+#account .form-container.active .login {
+  display: none;
+}
+#account .form-container a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media only screen and (max-width: 767px) {
+  #account .form-container form {
+    border: none;
+    width: 100%;
+  }
+  #account .form-container form .remember-forget {
+    flex-direction: column;
+  }
+}
+
+footer {
+  position: relative;
+  padding: 10rem 0;
+  background-image: url("../img/footer-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+footer .footer::after {
+  background-image: url("../img/ripoff_flip.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 100%;
+  content: "";
+}
+footer .footer .footer-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: start;
+  padding: 3rem 0;
+}
+footer .footer .footer-top nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+footer .footer .footer-top nav h3 {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-left: 5px solid #f3a395;
+  padding: 0 5px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+footer .footer .footer-top nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+}
+footer .footer .footer-top nav ul li a {
+  font-size: 13px;
+  color: #fff;
+  font-weight: 400;
+}
+footer .footer .footer-top nav ul li a i {
+  margin-right: 5px;
+}
+footer .footer .footer-top nav p {
+  color: #fff;
+}
+footer .footer-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2rem 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+footer .footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footer-bottom .container .icons {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+  background-color: rgba(128, 128, 128, 0.4);
+}
+footer .footer-bottom .container .icons i {
+  color: #fff;
+}
+footer .footer-bottom .container p {
+  color: #fff;
+  font-size: 13px;
+}
+footer .footer-bottom .container p a {
+  color: #fff;
+}
+@media only screen and (max-width: 1000px) {
+  footer .footer .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer .footer .footer-top nav img {
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer .footer .footer-top {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  footer .footer .footer-top nav img {
+    width: 200px;
+  }
+  footer .footer-bottom .container {
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 10px;
+  }
 }/*# sourceMappingURL=main.css.map */

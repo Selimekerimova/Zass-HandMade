@@ -35,50 +35,15 @@ header {
         justify-content: center;
         gap: 30px;
         li {
-          // padding: 20px;
           position: relative;
+          transition: all 0.4s;
+          border: 3px solid transparent;
           a {
+            border-bottom: 3px solid transparent;
             transition: all 0.4s;
             &:hover {
               color: #f3a395;
             }
-          }
-          &.icons {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            a {
-              .fa-solid {
-                font-size: 1.3rem;
-                color: #887f6e;
-                transition: all 0.5s;
-                position: relative;
-                .favCount,
-                .basketCount {
-                  width: 25px;
-                  height: 25px;
-                  font-size: 10px;
-                  position: absolute;
-                  top: -20px;
-                  left: 8px;
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  background-color: #f3a395;
-                  color: #fff;
-                }
-                .favCount {
-                  background-color: #111;
-                }
-                &:hover {
-                  color: #f3a395;
-                }
-              }
-            }
-          }
-          &.active {
-            border-bottom: 3px solid #f3a395;
           }
 
           .drapdown {
@@ -109,6 +74,8 @@ header {
             transition: all 0.6s;
           }
           &:hover {
+            border-bottom: 3px solid #f3a395;
+
             .drapdown {
               top: 100%;
               position: absolute;
@@ -121,6 +88,42 @@ header {
                 width: 90%;
                 // margin: 1rem 0;
                 padding: 10px 20px;
+              }
+            }
+          }
+        }
+        .icons {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          li {
+            a {
+              .fa-solid {
+                font-size: 1.3rem;
+                color: #887f6e;
+                transition: all 0.5s;
+                position: relative;
+                .favCount,
+                .basketCount {
+                  width: 25px;
+                  height: 25px;
+                  font-size: 10px;
+                  position: absolute;
+                  top: -20px;
+                  left: 8px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background-color: #f3a395;
+                  color: #fff;
+                }
+                .favCount {
+                  background-color: #111;
+                }
+                &:hover {
+                  color: #f3a395;
+                }
               }
             }
           }
@@ -172,11 +175,10 @@ header {
                 height: unset;
               }
             }
-            .icons {
-              position: absolute;
-              right: 50px;
-              top: 20px;
-            }
+          }
+          .icons {
+            display: flex;
+            gap: 10px;
           }
         }
 

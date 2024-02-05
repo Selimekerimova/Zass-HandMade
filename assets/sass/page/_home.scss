@@ -3,6 +3,7 @@
 
   .swiper {
     width: 100%;
+    position: relative;
     &::after {
       background-image: url("../img/ripoff_flip.png");
       background-repeat: no-repeat;
@@ -162,8 +163,7 @@
     background-position: center;
     height: 100px;
     position: absolute;
-    top: -1px;
-    // z-index: 10;
+    top: 0;
     width: 100%;
     content: "";
   }
@@ -174,7 +174,6 @@
     height: 100px;
     position: absolute;
     bottom: 0;
-    // z-index: 6;
     width: 100%;
     content: "";
   }
@@ -200,11 +199,11 @@
         align-items: center;
         background-color: #fff;
         width: 100%;
-        // aspect-ratio: 1/1;
-        // object-fit: cover;
 
         img {
           width: 100%;
+          aspect-ratio: 1/1;
+          object-fit: cover;
         }
         .info-card {
           padding: 10px 0;
@@ -212,11 +211,21 @@
           flex-direction: column;
           align-items: center;
           gap: 10px;
+          h2 {
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 1px;
+          }
           .productPrice {
             display: flex;
             gap: 10px;
+            p {
+              font-weight: bold;
+              font-size: 18px;
+            }
             .oldPrice {
               text-decoration: line-through;
+              opacity: 0.5;
             }
           }
 
@@ -252,7 +261,7 @@
         grid-template-columns: repeat(1, 1fr);
       }
     }
-    .loadMore {
+    .allProductBtn {
       padding: 10px 20px;
       text-transform: capitalize;
       background-color: #fff;
