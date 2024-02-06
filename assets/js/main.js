@@ -48,7 +48,7 @@ function drawCard(data) {
     let favIcon = document.createElement("i");
 
     image.src = `${element.img}`;
-    productName.innerHTML=`${element.productName}`
+    productName.innerHTML=`${element.productName.substring(0,20)}...`
     productPrice.innerHTML=`${element.price}`
     productOldPrice.innerHTML=`${element.oldPrice}`
     addToCardBtn.innerHTML="Add to card"
@@ -73,5 +73,7 @@ function drawCard(data) {
 
 // all product 
 allProductBtn.addEventListener("click",function(){
-window.location.href="allProducts.html"
+window.location.href="signup-login.html"
 })
+
+// fav 

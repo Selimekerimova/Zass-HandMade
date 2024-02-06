@@ -1,23 +1,13 @@
-const cards = document.querySelector(".cards"),
-  loadMoreBtn = document.querySelector(".loadMore");
-
+const cards = document.querySelector(".cards");
 let favCount = document.querySelector(".favCount");
-let limit = 3;
-let favProducts = getProductLocaleStorage();
-let products;
-favoriteCount(favProducts.length);
-async function getAllData(endpoint) {
-  try {
-    let res = await axios(`${BASE_URL}/${endpoint}`);
-    // console.log(res.data);
-    products = res.data;
-    drawCard(res.data.slice(0, limit));
-  } catch (error) {
-    console.log(error);
-  }
-}
-getAllData("products");
 
+
+
+let favProducts = getProductLocaleStorage();
+favoriteCount(favProducts.length);
+
+
+drawCard(favProducts);
 function drawCard(data) {
   cards.innerHTML = "";
   data.forEach((element) => {
@@ -34,7 +24,7 @@ function drawCard(data) {
     let favIcon = document.createElement("i");
 
     image.src = `${element.img}`;
-    productName.innerHTML = `${element.productName.substring(0,20)}...`;
+    productName.innerHTML = `${element.productName.substring(0, 20)}...`;
     productPrice.innerHTML = `$${element.price}`;
     productOldPrice.innerHTML = `${element.oldPrice}`;
     addToCardBtn.innerHTML = "Add to card";
@@ -46,9 +36,7 @@ function drawCard(data) {
     productOldPrice.className = "oldPrice";
     addToCardBtn.className = "addToCardBtn";
     eyeIcon.className = "fa-solid fa-eye";
-    favIcon.className = favProducts.find((item) => item.id === element.id)
-      ? "fa-solid fa-heart"
-      : "fa-regular fa-heart";
+    favIcon.className = "fa-solid fa-heart";
 
     cardDiv.append(image, cardInfoDiv);
     cardInfoDiv.append(productName, pricesDiv, prosesDiv);
@@ -59,33 +47,13 @@ function drawCard(data) {
     // add to fav
 
     favIcon.addEventListener("click", function () {
-      this.className === "fa-regular fa-heart"
-        ? (this.className = "fa-solid fa-heart")
-        : (this.className = "fa-regular fa-heart");
-
-      let favProduct = getProductLocaleStorage();
-
-      let favIndex = favProduct.findIndex((item) => item.id === element.id);
-
-      if (favIndex === -1) {
-        favProduct.push(element);
-      } else {
-        favProduct.splice(favIndex, 1);
-      }
-      setProductLocaleStorage(favProduct);
-      favoriteCount(favProduct.length);
+      favProducts = favProducts.filter((item) => item.id != element.id);
+      setProductLocaleStorage(favProducts);
+      favoriteCount(favProducts.length);
+      cardDiv.remove();
     });
   });
 }
-
-// load more
-loadMoreBtn.addEventListener("click", function () {
-  limit += 3;
-  drawCard(products.slice(0, limit));
-  if (limit >= products.length) {
-    loadMoreBtn.remove();
-  }
-});
 
 // setLocaleStorage
 function setProductLocaleStorage(arr) {

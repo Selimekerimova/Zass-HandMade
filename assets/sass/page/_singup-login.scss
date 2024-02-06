@@ -1,160 +1,3 @@
-// #account {
-//   // height: 100vh;
-//   background-color: #fff;
-//   padding: 10rem 0;
-//   padding-top: 40vh;
-//   // position: relative;
-
-//   .content {
-//     height: 100vh;
-//     // background-image: url("../img/home-01-1920x1028.jpg");
-//     // position: fixed;
-//     width: 100%;
-//     .container {
-//       // width: 100%;
-//       height: 100vh;
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       flex-direction: column;
-//       .btns {
-//         display: flex;
-//         padding: 30px;
-//         gap: 20px;
-
-//         .accountBtn {
-//           background-color: transparent;
-//           border: none;
-//           font-size: 44px;
-//           color: #333;
-//           transition: all 0.6s;
-
-//           &.active {
-//             color: #cacaca;
-//           }
-//         }
-//       }
-
-//       .form {
-//         width: 400px;
-//         padding: 20px;
-//         background-color: #fff;
-//         border-radius: 20px;
-//         display: none;
-//         align-items: start;
-//         gap: 20px;
-//         position: relative;
-//         background-color: red;
-
-//         .input-control {
-//           display: flex;
-//           // flex-direction: column;
-//           gap: 10px;
-//           width: 100%;
-//           border-bottom: 2px solid #fff;
-//           position: relative;
-//           label {
-//             position: absolute;
-//             top: 50%;
-//             left: 5px;
-//             transform: translateY(-50%);
-//             color: #fff;
-//           }
-
-//           input {
-//             width: 100%;
-//             padding: 10px;
-//             background-color: transparent;
-//             border: none;
-//           }
-//           i {
-//             position: absolute;
-//             right: 8px;
-//             color: #fff;
-//             top: 40%;
-//           }
-//           &.error {
-//             input {
-//               border-color: #ff3860;
-//             }
-//           }
-//           &.success {
-//             input {
-//               border-color: #09c372;
-//             }
-//           }
-//           .error {
-//             color: #ff3860;
-//             font-size: 9px;
-//             height: 13px;
-//           }
-//         }
-//         .form-btn {
-//           padding: 10px;
-//           width: 100px;
-//           background-color: #fff;
-//           color: #7ebfbf;
-//           font-size: 14px;
-//           border: 1px dashed #7ebfbf;
-//           border-radius: 20px;
-//           transition: all 0.7s;
-//           &:hover {
-//             background-color: #7ebfbf;
-//             color: #fff;
-//           }
-//         }
-//         h1 {
-//           color: #0f2927;
-//           text-align: center;
-//           font-size: 24px;
-//           font-weight: 800;
-//         }
-//         // &.register {
-//         // }
-//         &.active-form {
-//           display: flex;
-//           flex-direction: column;
-//         }
-//       }
-//       .form {
-//         &.login {
-//           display: none;
-//           // display: block;
-
-//         }
-//         &.active-form {
-//           display: flex;
-//           flex-direction: column;
-//         }
-//       }
-//     }
-//   }
-//   @media only screen and (max-width: 767px) {
-//     .content {
-//       .container {
-//         .btns {
-//           .accountBtn {
-//             font-size: 25px;
-//           }
-//         }
-//         .form {
-//           width: 300px;
-//           height: 100vh;
-//         }
-//       }
-//     }
-//   }
-//   @media only screen and (max-width: 400px) {
-//     .content {
-//       .container {
-//         .form {
-//           width: 90%;
-//         }
-//       }
-//     }
-//   }
-// }
-
 #account {
   background-image: url("../img/home-03-1920x1028.jpg");
   background-repeat: no-repeat;
@@ -213,6 +56,20 @@
         width: 90%;
         border-bottom: 2px solid #fff;
         position: relative;
+        .error {
+          color: red;
+          margin-bottom: 5px;
+          font-size: 13px;
+        }
+        &.error {
+          border-color: #ff3860;
+          i {
+            color: red;
+          }
+        }
+        &.success {
+          border-color: #09c372;
+        }
         input {
           width: 89%;
           height: 30px;
@@ -221,9 +78,8 @@
           background-color: transparent;
           color: #fff;
           font-size: 1em;
-          &:focus ~ label,
-          :valid ~ label {
-            top: -12px;
+          &::placeholder {
+            color: #fff;
           }
         }
 
@@ -233,14 +89,13 @@
           color: #fff;
           top: 30%;
         }
-        label {
-          position: absolute;
-          top: 30%;
-          left: 5px;
-          transition: all 0.5s;
-
-          color: #fff;
-        }
+        // label {
+        //   position: absolute;
+        //   top: 30%;
+        //   left: 5px;
+        //   // transition: all 0.5s;
+        //   color: #fff;
+        // }
       }
       .remember-forget {
         margin: -15px 0 15px;
@@ -295,13 +150,23 @@
     }
   }
   @media only screen and (max-width: 767px) {
+    &::after {
+      top: 16vh;
+    }
     .form-container {
       form {
-        border: none;
-        width: 100%;
+        width: 350px;
         .remember-forget {
           flex-direction: column;
         }
+      }
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .form-container {
+      form {
+        width: 100%;
+        border: none;
       }
     }
   }

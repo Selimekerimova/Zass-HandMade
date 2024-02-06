@@ -3,13 +3,17 @@ const formRegister = document.querySelector(".register"),
   loginBtn = document.querySelector("#login"),
   registerBtn = document.querySelector("#signup"),
   formContainer = document.querySelector(".form-container"),
-  passwordIcon = document.querySelectorAll(".fa-eye-slash"),
-  username = document.querySelector(".username"),
-  email = document.querySelector(".email"),
-  password = document.querySelector(".password"),
-  password2 = document.querySelector(".password2");
+  passwordIcon = document.querySelectorAll(".fa-eye-slash");
+
+let username = document.querySelector(".username");
+let loginEmail = document.querySelector(".login-email");
+let signupEmail = document.querySelector(".signup-email");
+let loginPassword = document.querySelector(".login-password");
+let signupPassword = document.querySelector(".signup-password");
+let password2 = document.querySelector(".password2");
 
 let users = JSON.parse(localStorage.getItem("user")) || [];
+
 loginBtn.addEventListener("click", function (e) {
   e.preventDefault();
   formContainer.classList.remove("active");
@@ -21,12 +25,15 @@ registerBtn.addEventListener("click", function (e) {
 });
 
 // password icon
-passwordIcon.forEach(item=>{
-  item.addEventListener("click",function(){
-    item.classList.toggle("fa-eye")
-  })
-})
-
+passwordIcon.forEach((item) => {
+  item.addEventListener("click", function () {
+    item.classList.toggle("fa-eye");
+    let inputs = document.querySelectorAll("input");
+    inputs.forEach((item) => {
+      item.type === "password" ? (item.type = "text") : null;
+    });
+  });
+});
 
 // sign up
 formRegister.addEventListener("submit", function (e) {
@@ -37,15 +44,15 @@ formRegister.addEventListener("submit", function (e) {
   if (!bool) {
     if (
       username.value != "" &&
-      email.value != "" &&
-      password.value != "" &&
+      signupEmail.value != "" &&
+      signupPassword.value != "" &&
       password2.value != ""
     ) {
       let userInfo = {
         id: Date.now(),
         username: username.value,
-        email: email.value,
-        password: password.value,
+        email: signupEmail.value,
+        password: signupPassword.value,
         password2: password2.value,
       };
       users.push(userInfo);
@@ -58,52 +65,69 @@ formRegister.addEventListener("submit", function (e) {
 });
 
 // login
+
 formLogin.addEventListener("submit", function (e) {
   e.preventDefault();
-  let user = users.filter((item) => {
-    console.log(item);
-    return item.email === email.value && item.password === password.value;
+  let userId;
+  let user = users.find((item) => {
+    return item.email === loginEmail.value &&
+      item.password === loginPassword.value
+      ? (userId = item.id)
+      : null;
   });
   if (user) {
-    window.location.href = "allProducts.html";
+    window.location.href = `allProducts.html?id=${userId}`;
+    // console.log(userId);
   } else {
     confirm("User not found");
   }
+
+  // console.log(userId);
+
+
+
+
 });
 
+// input empty
+function inputEmpty() {
+  username.value = "";
+  signupEmail.value = "";
+  signupPassword.value = "";
+  password2.value = "";
+}
 ///// form validetion
 
-function setError(element, message) {
+const setError = (element, message) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".error");
+
   errorDisplay.innerText = message;
   inputControl.classList.add("error");
   inputControl.classList.remove("success");
-}
+  inputEmpty();
+};
 
-function setSuccess(element) {
+const setSuccess = (element) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".error");
 
   errorDisplay.innerText = "";
   inputControl.classList.add("success");
   inputControl.classList.remove("error");
-  username.value = "";
-  password2.value = "";
-  password.value = "";
-  email.value = "";
-}
+  inputEmpty();
+};
 
-function isValidEmail(email) {
+const isValidEmail = (email) => {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
-}
+};
 
 function validateInputs() {
   const usernameValue = username.value.trim();
-  const emailValue = email.value.trim();
-  const passwordValue = password.value.trim();
+  const emailValue = signupEmail.value.trim();
+  const passwordValue = signupPassword.value.trim();
   const password2Value = password2.value.trim();
 
   if (usernameValue === "") {
@@ -113,19 +137,19 @@ function validateInputs() {
   }
 
   if (emailValue === "") {
-    setError(email, "Email is required");
+    setError(signupEmail, "Email is required");
   } else if (!isValidEmail(emailValue)) {
-    setError(email, "Provide a valid email address");
+    setError(signupEmail, "Provide a valid email address");
   } else {
-    setSuccess(email);
+    setSuccess(signupEmail);
   }
 
   if (passwordValue === "") {
-    setError(password, "Password is required");
+    setError(signupPassword, "Password is required");
   } else if (passwordValue.length < 8) {
-    setError(password, "Password must be at least 8 character.");
+    setError(signupPassword, "Password must be at least 8 character.");
   } else {
-    setSuccess(password);
+    setSuccess(signupPassword);
   }
 
   if (password2Value === "") {
@@ -138,4 +162,4 @@ function validateInputs() {
 }
 
 // // scroll reveral
-ScrollReveal().reveal(".form", { delay: 1000 });
+// ScrollReveal().reveal(".form", { delay: 1000 });

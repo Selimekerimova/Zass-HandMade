@@ -8,9 +8,7 @@ menuIcon.addEventListener("click", function () {
   menuIcon.classList.toggle("fa-xmark");
 });
 
-
 // scroll
 window.addEventListener("scroll", function () {
-  header.classList.toggle("scrollHeader", scrollY > 500);
+  header.classList.toggle("scrollHeader", scrollY > 300);
 });
-

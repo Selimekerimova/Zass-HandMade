@@ -290,6 +290,7 @@ header .header nav .fa-bars {
 @media screen and (max-width: 767px) {
   header {
     height: 6rem;
+    width: 100%;
   }
   header .header .logo img {
     width: 100px;
@@ -479,11 +480,108 @@ header .header nav .fa-bars {
   #hero-banner .hero-banner {
     grid-template-columns: repeat(2, 1fr);
   }
+  #hero-banner .hero-banner .card {
+    width: 300px;
+  }
 }
 @media only screen and (max-width: 767px) {
   #hero-banner .hero-banner {
     grid-template-columns: repeat(1, 1fr);
   }
+  #hero-banner .hero-banner .card {
+    width: 200px;
+  }
+  #hero-banner .hero-banner .card p {
+    width: 200px;
+  }
+}
+
+#decor .decor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 10rem 0;
+  position: relative;
+}
+#decor .decor .content {
+  transition: all 1s;
+  width: 600px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+}
+#decor .decor .content h1 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+#decor .decor .content p {
+  font-size: 18px;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: capitalize;
+}
+#decor .decor .content.left h1 {
+  position: absolute;
+  right: 40px;
+  top: 40%;
+}
+#decor .decor .content.left p {
+  position: absolute;
+  right: 40px;
+  top: 60%;
+}
+#decor .decor .content.right h1 {
+  position: absolute;
+  left: 40px;
+  top: 40%;
+}
+#decor .decor .content.right p {
+  position: absolute;
+  left: 40px;
+  top: 60%;
+}
+#decor .decor .content .img {
+  width: 600px;
+  overflow: hidden;
+  transition: all 1s;
+}
+#decor .decor .content .img img {
+  width: 100%;
+}
+#decor .decor .content:hover .img img {
+  animation: scale 2s ease;
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media only screen and (max-width: 767px) {
+  #decor .decor {
+    flex-direction: column;
+  }
+  #decor .decor .content {
+    width: 100%;
+  }
+  #decor .decor .content .img {
+    width: 100%;
+  }
+}
+
+body {
+  background-color: #fff;
 }
 
 #products {
@@ -591,11 +689,6 @@ header .header nav .fa-bars {
   justify-content: center;
   color: #f3a395;
 }
-@media only screen and (max-width: 767px) {
-  #products .products .cards {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 #products .products .allProductBtn {
   padding: 10px 20px;
   text-transform: capitalize;
@@ -609,6 +702,17 @@ header .header nav .fa-bars {
 #products .products .allProductBtn:hover {
   color: #fff;
   background-color: #d68630;
+}
+@media only screen and (max-width: 767px) {
+  #products {
+    padding-top: 9rem;
+  }
+  #products::after {
+    top: -1px;
+  }
+  #products .products .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 #account {
@@ -673,6 +777,20 @@ header .header nav .fa-bars {
   border-bottom: 2px solid #fff;
   position: relative;
 }
+#account .form-container form .input-control .error {
+  color: red;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+#account .form-container form .input-control.error {
+  border-color: #ff3860;
+}
+#account .form-container form .input-control.error i {
+  color: red;
+}
+#account .form-container form .input-control.success {
+  border-color: #09c372;
+}
 #account .form-container form .input-control input {
   width: 89%;
   height: 30px;
@@ -682,22 +800,17 @@ header .header nav .fa-bars {
   color: #fff;
   font-size: 1em;
 }
-#account .form-container form .input-control input:focus ~ label,
-#account .form-container form .input-control input :valid ~ label {
-  top: -12px;
+#account .form-container form .input-control input::-moz-placeholder {
+  color: #fff;
+}
+#account .form-container form .input-control input::placeholder {
+  color: #fff;
 }
 #account .form-container form .input-control .fa-solid {
   position: absolute;
   right: 10px;
   color: #fff;
   top: 30%;
-}
-#account .form-container form .input-control label {
-  position: absolute;
-  top: 30%;
-  left: 5px;
-  transition: all 0.5s;
-  color: #fff;
 }
 #account .form-container form .remember-forget {
   margin: -15px 0 15px;
@@ -746,12 +859,20 @@ header .header nav .fa-bars {
   cursor: pointer;
 }
 @media only screen and (max-width: 767px) {
+  #account::after {
+    top: 16vh;
+  }
   #account .form-container form {
-    border: none;
-    width: 100%;
+    width: 350px;
   }
   #account .form-container form .remember-forget {
     flex-direction: column;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #account .form-container form {
+    width: 100%;
+    border: none;
   }
 }
 
