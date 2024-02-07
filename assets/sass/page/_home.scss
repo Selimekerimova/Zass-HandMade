@@ -1,20 +1,20 @@
-#swiper {
+#main-swiper {
   width: 100%;
 
   .swiper {
     width: 100%;
     position: relative;
-    &::after {
-      background-image: url("../img/ripoff_flip.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 100px;
-      position: absolute;
-      top: 190px;
-      z-index: 10;
-      width: 100%;
-      content: "";
-    }
+    // &::after {
+    //   background-image: url("../img/ripoff_flip.png");
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   height: 100px;
+    //   position: absolute;
+    //   top: 190px;
+    //   z-index: 10;
+    //   width: 100%;
+    //   content: "";
+    // }
 
     &::before {
       background-image: url("../img/ripoff.png");
@@ -101,8 +101,10 @@
   .hero-banner {
     padding: 5rem 0;
     border-bottom: 1px rgba($color: #000000, $alpha: 0.3) dashed;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
     .card {
       border: 0.5px solid rgba($color: #000000, $alpha: 0.1);
@@ -144,157 +146,127 @@
       }
     }
 
-    @media only screen and (max-width: 900px) {
-      grid-template-columns: repeat(2, 1fr);
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
       .card {
         width: 300px;
-       
-      }
-    }
-    @media only screen and (max-width: 767px) {
-      grid-template-columns: repeat(1, 1fr);
-      .card {
-        width: 200px;
         p {
           width: 200px;
         }
       }
     }
+    @media only screen and (max-width: 400px) {
+      .card {
+        width: 70%;
+      }
+    }
   }
 }
+// product swiper
+#product-swiper {
+  .swiper {
+    width: 100%;
+    .swiper-wrapper.swiper-content {
+      padding: 10vh 0;
+      transform: unset !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .swiper-slide {
+        font-size: 18px;
+        color: #fff;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 40px 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // background-image: url("../img/about-image/zass_main_hero1.jpg");
+        // background-repeat: no-repeat;
+        // background-position: center;
+        // background-size: cover;
+        .left {
+          padding: 1rem 2rem;
+          width: 45%;
+          color: #f3a395;
+          display: flex;
+          align-items: start;
+          flex-direction: column;
+          gap: 20px;
+          .detailBtn {
+            padding: 10px 20px;
+            color: #f3a395;
+            background-color: transparent;
+            border: #f3a395 1px solid;
+            border-radius: 20px;
+            transition: all 0.7s;
+            &:hover {
+              color: #fff;
+              background-color: #f3a395;
+            }
+          }
+          .title {
+            font-size: 41px;
+            font-weight: 300;
+            color: #f3a395;
+          }
 
-// product
-// #products {
-//   padding: 6rem 0;
-//   position: relative;
-//   &::after {
-//     background-image: url("../img/ripoff_flip.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     height: 100px;
-//     position: absolute;
-//     top: 0;
-//     width: 100%;
-//     content: "";
-//   }
-//   &::before {
-//     background-image: url("../img/ripoff.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     height: 100px;
-//     position: absolute;
-//     bottom: 0;
-//     width: 100%;
-//     content: "";
-//   }
-//   .products {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     gap: 20px;
-//     h1 {
-//       font-size: 44px;
-//       color: #2b3033;
-//       letter-spacing: 1px;
-//       font-weight: 800;
-//     }
-//     .cards {
-//       padding: 1rem 0;
-//       display: grid;
-//       grid-template-columns: repeat(3, 1fr);
-//       gap: 20px;
-//       .card {
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         background-color: #fff;
-//         width: 100%;
+          .products-price {
+            font-size: 21px;
+            color: #f3a395;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            .oldPrice {
+              text-decoration: line-through;
+            }
+          }
 
-//         img {
-//           width: 100%;
-//           aspect-ratio: 1/1;
-//           object-fit: cover;
-//         }
-//         .info-card {
-//           padding: 10px 0;
-//           display: flex;
-//           flex-direction: column;
-//           align-items: center;
-//           gap: 10px;
-//           h2 {
-//             font-weight: 800;
-//             font-size: 20px;
-//             letter-spacing: 1px;
-//           }
-//           .productPrice {
-//             display: flex;
-//             gap: 10px;
-//             p {
-//               font-weight: bold;
-//               font-size: 18px;
-//             }
-//             .oldPrice {
-//               text-decoration: line-through;
-//               opacity: 0.5;
-//             }
-//           }
+          .text {
+            // width: 60%;
+            p {
+              font-size: 14px;
+              max-width: 400px;
+              line-height: 1.3;
+            }
+          }
+        }
+        .right {
+          width: 45%;
+          img {
+            width: 90%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 40px 40px 40px 50%;
+          }
+        }
 
-//           .proses {
-//             display: flex;
-//             .addToCardBtn {
-//               border: 1px dashed #f3a395;
-//               padding: 10px;
-//               background-color: #fff;
-//               color: #f3a395;
-//               border-radius: 20px;
-//               text-transform: uppercase;
-//               transition: all 0.6s;
-//               &:hover {
-//                 background-color: #f3a395;
-//                 color: #fff;
-//               }
-//             }
-//             i {
-//               border: 1px dashed #f3a395;
-//               height: 30px;
-//               width: 30px;
-//               border-radius: 50%;
-//               display: flex;
-//               align-items: center;
-//               justify-content: center;
-//               color: #f3a395;
-//             }
-//           }
-//         }
-//       }
-//     }
-//     .allProductBtn {
-//       padding: 10px 20px;
-//       text-transform: capitalize;
-//       background-color: #fff;
-//       color: #d68630;
-//       font-size: 18px;
-//       border: 1px solid #d68630;
-//       border-radius: 20px;
-//       transition: all 0.7s;
-//       &:hover {
-//         color: #fff;
-//         background-color: #d68630;
-//       }
-//     }
-//   }
-//   @media only screen and (max-width: 767px) {
-//     padding-top: 9rem;
-//     &::after {
-//       top: -1px;
-//     }
-//     .products {
-//       .cards {
-//         grid-template-columns: repeat(1, 1fr);
-//       }
-//     }
-//   }
-// }
+        @media only screen and (max-width: 767px) {
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+          .left {
+            width: 100%;
+            align-items: center;
+          }
+          .right {
+            width: 100%;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .swiperBtn {
+      color: #f3a395;
+    }
+    .swiper-pagination {
+      opacity: 0;
+    }
+  }
+}
 
 // decor section
 #decor {

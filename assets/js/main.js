@@ -1,8 +1,6 @@
-const cards = document.querySelector(".cards"),
-  allProductBtn = document.querySelector(".allProductBtn");
- 
-let limit=3;
-let products;
+const cards = document.querySelector(".cards");
+const swiperBtn = document.querySelectorAll(".detailBtn");
+let productId;
 //  Initialize Swiper
 var swiper = new Swiper(".mySwiper", {
   cssMode: true,
@@ -16,15 +14,33 @@ var swiper = new Swiper(".mySwiper", {
   mousewheel: true,
   keyboard: true,
 });
+
+var swiper = new Swiper(".product-swiper", {
+  speed: 600,
+  parallax: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+// all product btn
+swiperBtn.forEach((item) =>
+  item.addEventListener("click", function () {
+    window.location.href = "signup-login.html";
+  })
+);
 // // scroll reveral
-ScrollReveal().reveal(".swiper-content", { delay: 2000});
+// ScrollReveal().reveal(".swiper-slide", { delay: 2000 });
 // get data
 async function getAllData(endpoint) {
   try {
     let res = await axios(`${BASE_URL}/${endpoint}`);
     // console.log(res.data);
-    products=res.data
-    drawCard(res.data.splice(0,limit))
+    drawCard(res.data);
   } catch (error) {
     console.log(error);
   }
@@ -36,44 +52,50 @@ function drawCard(data) {
   cards.innerHTML = "";
   data.forEach((element) => {
     let cardDiv = document.createElement("div");
-    let cardInfoDiv = document.createElement("div");
+    let leftDiv = document.createElement("div");
+    let rightDiv = document.createElement("div");
     let pricesDiv = document.createElement("div");
-    let prosesDiv = document.createElement("div");
     let image = document.createElement("img");
-    let productName = document.createElement("h2");
+    let productName = document.createElement("div");
     let productPrice = document.createElement("p");
     let productOldPrice = document.createElement("p");
-    let addToCardBtn = document.createElement("button");
-    let eyeIcon = document.createElement("i");
-    let favIcon = document.createElement("i");
+    let productDescriptionDiv = document.createElement("div");
+    let productDescription = document.createElement("p");
+    let detailBtn = document.createElement("button");
 
     image.src = `${element.img}`;
-    productName.innerHTML=`${element.productName.substring(0,20)}...`
-    productPrice.innerHTML=`${element.price}`
-    productOldPrice.innerHTML=`${element.oldPrice}`
-    addToCardBtn.innerHTML="Add to card"
+    productName.innerHTML = `${element.productName}`;
+    productPrice.innerHTML = `$${element.price}  - - - -`;
+    productOldPrice.innerHTML = `$${element.oldPrice}`;
+    productDescription.innerHTML = `${element.description.substring(
+      0,
+      300
+    )}....`;
+    detailBtn.innerHTML = "Detail page";
 
-    cardDiv.className = "card";
-    cardInfoDiv.className = "info-card";
-    pricesDiv.className = "productPrice";
-    prosesDiv.className = "proses";
+    cardDiv.className = "swiper-slide";
+    leftDiv.className = "left";
+    rightDiv.className = "right";
+    detailBtn.className = "detailBtn";
+    pricesDiv.className = "products-price";
+    productName.className = "title";
     productOldPrice.className = "oldPrice";
-    addToCardBtn.className = "addToCardBtn";
-    eyeIcon.className = "fa-solid fa-eye";
-    favIcon.className = "fa-regular fa-heart";
+    productDescriptionDiv.className = "text";
 
-    cardDiv.append(image, cardInfoDiv);
-    cardInfoDiv.append(productName, pricesDiv, prosesDiv);
+    cardDiv.append(leftDiv, rightDiv);
+    leftDiv.append(productName, pricesDiv, productDescriptionDiv, detailBtn);
     pricesDiv.append(productPrice, productOldPrice);
-    prosesDiv.append(addToCardBtn, favIcon, eyeIcon);
+    productDescriptionDiv.append(productDescription);
+    rightDiv.append(image);
     cards.append(cardDiv);
+
+    // detail page
+    detailBtn.addEventListener("click", function () {
+      productId = element.id;
+      // console.log(productId);
+      if(productId===element.id){
+        window.location.href=`detail.html?id=${productId}`
+      }
+    });
   });
 }
-
-
-// all product 
-allProductBtn.addEventListener("click",function(){
-window.location.href="signup-login.html"
-})
-
-// fav 

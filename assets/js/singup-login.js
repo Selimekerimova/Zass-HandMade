@@ -28,9 +28,11 @@ registerBtn.addEventListener("click", function (e) {
 passwordIcon.forEach((item) => {
   item.addEventListener("click", function () {
     item.classList.toggle("fa-eye");
-    let inputs = document.querySelectorAll("input");
-    inputs.forEach((item) => {
-      item.type === "password" ? (item.type = "text") : null;
+    let passwordInputs = document.querySelectorAll(".password");
+    passwordInputs.forEach((item) => {
+      item.type === "password"
+        ? (item.type = "text")
+        : (item.type = "password");
     });
   });
 });
@@ -39,7 +41,7 @@ passwordIcon.forEach((item) => {
 formRegister.addEventListener("submit", function (e) {
   e.preventDefault();
   let bool = users.some(
-    (item) => item.username == username.value && item.email == email.value
+    (item) => item.email == signupEmail.value && item.username == username.value
   );
   if (!bool) {
     if (
@@ -76,17 +78,13 @@ formLogin.addEventListener("submit", function (e) {
       : null;
   });
   if (user) {
-    window.location.href = `allProducts.html?id=${userId}`;
+    window.location.href = `home.html?id=${userId}`;
     // console.log(userId);
   } else {
     confirm("User not found");
   }
 
   // console.log(userId);
-
-
-
-
 });
 
 // input empty
