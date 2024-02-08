@@ -1,3 +1,37 @@
+.scrollBtnDiv {
+  display: flex;
+  position: relative;
+
+  .scrollBtn {
+    display: none;
+    background-color: black;
+    color: #fff;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 11;
+    height: 70px;
+    width: 70px;
+    border: 1px solid black;
+    border-radius: 50%;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      transition: all 0.7s;
+    }
+    &.scrollBtnShow {
+      display: flex;
+    }
+    &:hover {
+      i {
+        color: red;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
 #main-swiper {
   width: 100%;
 
@@ -84,7 +118,7 @@
     }
   }
   @media only screen and (max-width: 767px) {
-    padding-top: 5rem;
+    // padding-top: 5rem;
     .swiper {
       &::after {
         top: 40px;

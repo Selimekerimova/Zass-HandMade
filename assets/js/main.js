@@ -1,9 +1,11 @@
 const cards = document.querySelector(".cards");
 const swiperBtn = document.querySelectorAll(".detailBtn");
-let productId;
+const scrollBtn = document.querySelector(".scrollBtn");
 //  Initialize Swiper
 var swiper = new Swiper(".mySwiper", {
   cssMode: true,
+  loop: true,
+  autoplay: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -17,6 +19,8 @@ var swiper = new Swiper(".mySwiper", {
 
 var swiper = new Swiper(".product-swiper", {
   speed: 600,
+  loop: true,
+  autoplay: true,
   parallax: true,
   pagination: {
     el: ".swiper-pagination",
@@ -26,6 +30,13 @@ var swiper = new Swiper(".product-swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+});
+// scroll btn
+window.addEventListener("scroll", function () {
+  scrollBtn.classList.toggle("scrollBtnShow", scrollY > 400);
+});
+scrollBtn.addEventListener("click", function () {
+  window.scrollTo(0,0);
 });
 // all product btn
 swiperBtn.forEach((item) =>
@@ -93,8 +104,8 @@ function drawCard(data) {
     detailBtn.addEventListener("click", function () {
       productId = element.id;
       // console.log(productId);
-      if(productId===element.id){
-        window.location.href=`detail.html?id=${productId}`
+      if (productId === element.id) {
+        window.location.href = `detail.html?id=${productId}`;
       }
     });
   });

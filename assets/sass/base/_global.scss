@@ -5,6 +5,10 @@
     padding: 0 5%;
   }
 }
+* {
+  scroll-behavior: smooth !important;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   background-color: #ecddcd;

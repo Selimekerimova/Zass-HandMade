@@ -143,6 +143,10 @@ a {
   }
 }
 
+* {
+  scroll-behavior: smooth !important;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   background-color: #ecddcd;
@@ -168,16 +172,18 @@ header {
   top: 0;
   width: 100%;
   z-index: 10;
+  transition: all 0.5s;
+  scroll-behavior: smooth;
 }
 header.scrollHeader {
   background-color: #fff;
   position: fixed;
 }
-header.scrollHeader .header .logo img {
+header.scrollHeader .header .logo .logoTransparent {
   display: none;
 }
-header.scrollHeader .header nav {
-  padding-top: 100px;
+header.scrollHeader .header .logo .logoZass {
+  display: block;
 }
 header.scrollHeader .header nav ul li a {
   color: #000000;
@@ -187,6 +193,8 @@ header.scrollHeader .header nav ul .icons li a .fa-solid {
 }
 header.scrollHeader .header nav .fa-bars {
   display: none;
+  position: relative;
+  z-index: 3333333333;
 }
 header .header {
   display: flex;
@@ -194,6 +202,12 @@ header .header {
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+header .header .logo .logoTransparent {
+  display: block;
+}
+header .header .logo .logoZass {
+  display: none;
 }
 header .header nav {
   padding: 10px 0;
@@ -232,6 +246,9 @@ header .header nav ul li .drapdown {
 header .header nav ul li .drapdown li {
   border-bottom: 1px solid rgba(17, 17, 17, 0.09);
   transition: all 0.7s;
+}
+header .header nav ul li .drapdown li a {
+  color: #111;
 }
 header .header nav ul li .drapdown li:last-child {
   border-bottom: none;
@@ -299,35 +316,49 @@ header .header nav .fa-bars {
 }
 @media screen and (max-width: 767px) {
   header {
-    height: 6rem;
     width: 100%;
   }
-  header .header .logo {
+  header.scrollHeader {
+    position: unset;
+  }
+  header.scrollHeader .header nav {
+    display: none;
+  }
+  header.scrollHeader .header nav .fa-bars {
+    position: unset;
+  }
+  header .header {
+    padding: 2rem 0;
     position: relative;
   }
-  header .header .logo img {
-    width: 100px;
+  header .header .logo {
     position: absolute;
     top: 0;
     left: 0;
   }
+  header .header .logo .logoTransparent {
+    display: block;
+  }
+  header .header .logo .logoZass {
+    width: 100px;
+    display: none;
+  }
   header .header nav {
     position: relative;
     width: 100%;
-    margin-top: 200px;
   }
   header .header nav ul {
     padding: 1rem 0;
     display: none;
     position: absolute;
-    top: -50;
+    top: -50px;
     left: -100%;
     background: rgba(0, 0, 0, 0.8);
     width: 65%;
     display: flex;
     flex-direction: column;
     transition: all 0.7s;
-    height: 100vh;
+    height: 70vh;
     z-index: 3;
   }
   header .header nav ul li a {
@@ -350,8 +381,37 @@ header .header nav .fa-bars {
     display: block;
     position: absolute;
     right: 10px;
-    top: -200px;
   }
+}
+
+.scrollBtnDiv {
+  display: flex;
+  position: relative;
+}
+.scrollBtnDiv .scrollBtn {
+  display: none;
+  background-color: black;
+  color: #fff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 11;
+  height: 70px;
+  width: 70px;
+  border: 1px solid black;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.scrollBtnDiv .scrollBtn i {
+  transition: all 0.7s;
+}
+.scrollBtnDiv .scrollBtn.scrollBtnShow {
+  display: flex;
+}
+.scrollBtnDiv .scrollBtn:hover i {
+  color: red;
+  font-size: 2rem;
 }
 
 #main-swiper {
@@ -426,9 +486,6 @@ header .header nav .fa-bars {
   margin-top: 60px;
 }
 @media only screen and (max-width: 767px) {
-  #main-swiper {
-    padding-top: 5rem;
-  }
   #main-swiper .swiper::after {
     top: 40px;
   }
@@ -1109,7 +1166,6 @@ body {
   background-size: cover;
   padding-top: 8rem;
   position: relative;
-  height: 90vh;
 }
 #account .form-container {
   display: flex;
