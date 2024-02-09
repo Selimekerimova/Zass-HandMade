@@ -2,7 +2,7 @@ const cards = document.querySelector(".cards");
 const swiperBtn = document.querySelectorAll(".detailBtn");
 const scrollBtn = document.querySelector(".scrollBtn");
 //  Initialize Swiper
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".main-swiper", {
   cssMode: true,
   loop: true,
   autoplay: true,
@@ -36,7 +36,7 @@ window.addEventListener("scroll", function () {
   scrollBtn.classList.toggle("scrollBtnShow", scrollY > 400);
 });
 scrollBtn.addEventListener("click", function () {
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 });
 // all product btn
 swiperBtn.forEach((item) =>

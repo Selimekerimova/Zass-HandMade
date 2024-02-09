@@ -38,18 +38,7 @@
   .swiper {
     width: 100%;
     position: relative;
-    // &::after {
-    //   background-image: url("../img/ripoff_flip.png");
-    //   background-repeat: no-repeat;
-    //   background-position: center;
-    //   height: 100px;
-    //   position: absolute;
-    //   top: 190px;
-    //   z-index: 10;
-    //   width: 100%;
-    //   content: "";
-    // }
-
+ 
     &::before {
       background-image: url("../img/ripoff.png");
       background-repeat: no-repeat;
@@ -397,6 +386,139 @@
         .img {
           width: 100%;
         }
+      }
+    }
+  }
+}
+
+// Categories
+#categorie {
+  padding: 4rem 0;
+  .categorie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    h3 {
+      color: black;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 2rem 0;
+      .card {
+        padding: 1rem;
+        position: relative;
+        background-color: #fff;
+        border: 1px solid rgba($color: #000000, $alpha: 0.1);
+        .cardContent {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          overflow: hidden;
+          p {
+            position: absolute;
+            bottom: 130px;
+            z-index: 2;
+            background-color: rgba($color: #000000, $alpha: 0.7);
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          button {
+            position: absolute;
+            bottom: 60px;
+            width: 100%;
+            padding: 2rem 0;
+            border: none;
+            background-color: rgba($color: #fff, $alpha: 0.7);
+            font-size: 20px;
+          }
+          &:hover {
+            .img {
+              overflow: hidden;
+              transition: all 1s;
+              transform: scale(1.2);
+              img {
+                transition: all 1s;
+                transform: rotate(5deg);
+              }
+            }
+          }
+        }
+      }
+      @media only screen and (max-width: 1000px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media only screen and (max-width: 767px) {
+        grid-template-columns: repeat(1, 1fr);
+        .card {
+          .cardContent {
+            .img {
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// info card
+#info-cards {
+  padding: 3rem 0;
+  .info-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    .info-card {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      // border: 1px solid;
+      padding: 3rem;
+      background-color: #f5f4f1;
+      .fa {
+        width: 50px;
+        height: 50px;
+        background-color: #f3a395;
+        color: #fff;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+        h3 {
+          font-size: 17px;
+          font-weight: 500;
+          text-transform: capitalize;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      .info-card {
+        width: 300px;
       }
     }
   }

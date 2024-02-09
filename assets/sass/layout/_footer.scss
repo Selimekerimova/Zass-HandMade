@@ -58,6 +58,14 @@ footer {
         p {
           color: #fff;
         }
+        .cardIcons {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          align-items: center;
+          img {
+            width: 50px;
+          }
+        }
       }
     }
   }
