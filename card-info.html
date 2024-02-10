@@ -1,13 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card Info</title>
-</head>
-<body>
-    <header></header>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat:wght@300&family=Poppins:wght@200&family=Raleway:wght@300&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <!-- common js -->
+    <script defer src="./assets/js/common.js"></script>
+    <!-- card js -->
+    <script defer src="./assets/js/cardInfo.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <div class="header">
+          <a href="./index.html" class="logo">
+            <img
+              src="./assets/img/logo_ZASS_transparent.png"
+              alt="logo"
+              class="logoTransparent"
+            />
+            <img src="./assets/img/logo_ZASS.png" alt="logo" class="logoZass" />
+          </a>
+          <nav>
+            <ul>
+              <li class="active"><a href="./index.html">Home</a></li>
+              <li><a href="./index.html">Shop</a></li>
+              <li>
+                <a href="./index.html">Blog </a>
+                <ul class="drapdown">
+                  <li><a href="#">Masonry No Sidebar</a></li>
+                  <li><a href="#">Blog Standard</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Pages</a>
+                <ul class="drapdown">
+                  <li><a href="about.html">About us</a></li>
+                  <li><a href="whatWeDo.html">What We Do</a></li>
+                  <li><a href="#">Contacts</a></li>
+                  <li><a href="#">Coming Soon </a></li>
+                  <li><a href="#">My Account </a></li>
+                </ul>
+              </li>
+              <li><a href="#">Porfolio</a></li>
+              <li><a href="#">Elements</a></li>
+              <div class="icons">
+                <li>
+                  <a href="./signup-login.html"
+                    ><i class="fa-solid fa-user"></i
+                  ></a>
+                </li>
+
+                <li>
+                  <a href="./signup-login.html"
+                    ><i class="fa-solid fa-heart"
+                      ><sup class="favCount">0</sup></i
+                    ></a
+                  >
+                </li>
+
+                <li>
+                  <a href="signup-login.html"
+                    ><i class="fa-solid fa-bag-shopping"
+                      ><sup class="basketCount">0</sup></i
+                    ></a
+                  >
+                </li>
+
+                <li>
+                  <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+                <li>
+                  <a href="#"> <i class="fa-solid fa-list"></i></a>
+                </li>
+              </div>
+            </ul>
+
+            <i class="fa-solid fa-bars"></i>
+          </nav>
+        </div>
+      </div>
+    </header>
     <!-- card -->
-    
-</body>
+    <div id="card">
+      <div class="container">
+        <div class="card">
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required />
+            <div class="card-info">
+              <label for="card-number">Card Number:</label>
+              <input type="text" id="card-number" name="card-number" required />
+            </div>
+            <div class="card-info">
+              <label for="expiry-date">Expiry Date:</label>
+              <input type="text" id="expiry-date" name="expiry-date" required />
+              <label for="cvv">CVV:</label>
+              <input type="text" id="cvv" name="cvv" required />
+            </div>
+            <button type="submit" class="addBtn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

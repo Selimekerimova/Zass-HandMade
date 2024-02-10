@@ -31,14 +31,18 @@
     }
   }
 }
-
+// swiper
 #main-swiper {
   width: 100%;
-
+  background-image: url("../img/market_hero1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   .swiper {
     width: 100%;
     position: relative;
- 
+
     &::before {
       background-image: url("../img/ripoff.png");
       background-repeat: no-repeat;
@@ -51,11 +55,6 @@
       content: "";
     }
     .swiper-wrapper {
-      background-image: url("../img/market_hero1.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
       .swiper-slide {
         height: 100vh;
         text-align: center;
@@ -190,7 +189,7 @@
   .swiper {
     width: 100%;
     .swiper-wrapper.swiper-content {
-      padding: 10vh 0;
+      // padding: 10vh 0;
       transform: unset !important;
       display: flex;
       align-items: center;
@@ -204,10 +203,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        // background-image: url("../img/about-image/zass_main_hero1.jpg");
-        // background-repeat: no-repeat;
-        // background-position: center;
-        // background-size: cover;
+
         .left {
           padding: 1rem 2rem;
           width: 45%;
@@ -215,7 +211,7 @@
           display: flex;
           align-items: start;
           flex-direction: column;
-          gap: 20px;
+          gap: 40px;
           .detailBtn {
             padding: 10px 20px;
             color: #f3a395;
@@ -230,8 +226,10 @@
           }
           .title {
             font-size: 41px;
+            font-style: oblique;
             font-weight: 300;
             color: #f3a395;
+            text-transform: capitalize;
           }
 
           .products-price {
@@ -399,6 +397,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    text-align: center;
     h3 {
       color: black;
       font-size: 24px;

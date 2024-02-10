@@ -416,6 +416,11 @@ header .header nav .fa-bars {
 
 #main-swiper {
   width: 100%;
+  background-image: url("../img/market_hero1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 #main-swiper .swiper {
   width: 100%;
@@ -431,12 +436,6 @@ header .header nav .fa-bars {
   z-index: 7;
   width: 100%;
   content: "";
-}
-#main-swiper .swiper .swiper-wrapper {
-  background-image: url("../img/market_hero1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 #main-swiper .swiper .swiper-wrapper .swiper-slide {
   height: 100vh;
@@ -564,7 +563,6 @@ header .header nav .fa-bars {
   width: 100%;
 }
 #product-swiper .swiper .swiper-wrapper.swiper-content {
-  padding: 10vh 0;
   transform: unset !important;
   display: flex;
   align-items: center;
@@ -586,7 +584,7 @@ header .header nav .fa-bars {
   display: flex;
   align-items: start;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
 }
 #product-swiper .swiper .swiper-wrapper.swiper-content .swiper-slide .left .detailBtn {
   padding: 10px 20px;
@@ -602,8 +600,10 @@ header .header nav .fa-bars {
 }
 #product-swiper .swiper .swiper-wrapper.swiper-content .swiper-slide .left .title {
   font-size: 41px;
+  font-style: oblique;
   font-weight: 300;
   color: #f3a395;
+  text-transform: capitalize;
 }
 #product-swiper .swiper .swiper-wrapper.swiper-content .swiper-slide .left .products-price {
   font-size: 21px;
@@ -746,6 +746,7 @@ header .header nav .fa-bars {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  text-align: center;
 }
 #categorie .categorie h3 {
   color: black;
@@ -1574,6 +1575,84 @@ body {
   width: 180px;
 }
 
+#card {
+  background-color: #111;
+  position: relative;
+  z-index: 0;
+}
+#card .card {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#card .card::before {
+  content: "";
+  position: absolute;
+  height: 240px;
+  width: 240px;
+  border-radius: 50%;
+  transform: translate(-150px, -100px);
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+  z-index: -1;
+}
+#card .card::after {
+  content: "";
+  position: absolute;
+  height: 240px;
+  width: 240px;
+  border-radius: 50%;
+  transform: translate(150px, 100px);
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+  z-index: -1;
+}
+#card .card form {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #fff;
+  padding: 2rem;
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+}
+#card .card form input {
+  color: #111;
+}
+#card .card form label {
+  padding: 12px;
+  margin-top: 8px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  width: 30%;
+  padding-right: 10px;
+  color: #ccc;
+}
+#card .card form input[type=text] {
+  width: 70%;
+  padding: 12px;
+  margin-top: 8px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+#card .card form .addBtn {
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 30%;
+  margin-left: 80%;
+}
+#card .card form input[type=text][name=card-number],
+#card .card form input[type=text][name=expiry-date],
+#card .card form input[type=text][name=cvv] {
+  width: 30%;
+}
+
 #detailProduct {
   padding: 10rem 0;
 }
@@ -1802,6 +1881,7 @@ footer {
   position: relative;
   padding: 10rem 0;
   background-image: url("../img/footer-bg.jpg");
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

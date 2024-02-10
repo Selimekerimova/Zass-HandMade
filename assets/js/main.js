@@ -2,7 +2,7 @@ const cards = document.querySelector(".cards");
 const swiperBtn = document.querySelectorAll(".detailBtn");
 const scrollBtn = document.querySelector(".scrollBtn");
 //  Initialize Swiper
-var swiper = new Swiper(".main-swiper", {
+var swiper = new Swiper(".mySwiper", {
   cssMode: true,
   loop: true,
   autoplay: true,
@@ -17,20 +17,20 @@ var swiper = new Swiper(".main-swiper", {
   keyboard: true,
 });
 
-var swiper = new Swiper(".product-swiper", {
-  speed: 600,
-  loop: true,
-  autoplay: true,
-  parallax: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+// var swiper = new Swiper(".mySwiper", {
+//   speed: 600,
+//   loop: true,
+//   autoplay: true,
+//   parallax: true,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
 // scroll btn
 window.addEventListener("scroll", function () {
   scrollBtn.classList.toggle("scrollBtnShow", scrollY > 400);
@@ -45,7 +45,7 @@ swiperBtn.forEach((item) =>
   })
 );
 // // scroll reveral
-// ScrollReveal().reveal(".swiper-slide", { delay: 2000 });
+ScrollReveal().reveal(".hero-banner", { delay: 1000 });
 // get data
 async function getAllData(endpoint) {
   try {
