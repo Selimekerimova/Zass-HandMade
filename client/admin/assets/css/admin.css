@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1199px) {
+  .container {
+    padding: 0 5%;
+  }
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: #f9f9f9;
+  z-index: 2000;
+  font-family: "Lato", sans-serif;
+  transition: 0.3s ease;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+#sidebar.hide {
+  width: 50px;
+}
+#sidebar .brand {
+  font-size: 24px;
+  font-weight: 700;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  color: #3c91e6;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #f9f9f9;
+  z-index: 500;
+  padding-bottom: 20px;
+  box-sizing: content-box;
+}
+#sidebar .brand .bx {
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+}
+#sidebar .side-menu {
+  width: 100%;
+  margin-top: 48px;
+}
+#sidebar .side-menu li {
+  height: 48px;
+  background: transparent;
+  margin-left: 6px;
+  border-radius: 48px 0 0 48px;
+  padding: 4px;
+}
+#sidebar .side-menu li.active {
+  background: #eee;
+  position: relative;
+}
+#sidebar .side-menu li.active::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: -40px;
+  right: 0;
+  box-shadow: 20px 20px 0 #eee;
+  z-index: -1;
+}
+#sidebar .side-menu li.active::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  bottom: -40px;
+  right: 0;
+  box-shadow: 20px -20px 0 #eee;
+  z-index: -1;
+}
+#sidebar .side-menu li a {
+  width: 100%;
+  height: 100%;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  font-size: 16px;
+  color: #0c0c1e;
+  white-space: nowrap;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+}
+#sidebar .side-menu li a .bx {
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+}
+#sidebar .side-menu li .logout {
+  color: #db504a;
+}
+#sidebar .side-menu.top li.active {
+  color: #3c91e6;
+}
+#sidebar .side-menu.top li a:hover {
+  color: #3c91e6;
+}
+
+#content {
+  position: relative;
+  width: 100%;
+  width: calc(100% - 60px);
+  left: 60px;
+}
+#content .content {
+  background: #f9f9f9;
+  width: 80%;
+  height: 56px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  grid-gap: 24px;
+  font-family: "Lato", sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+#content .content form {
+  max-width: 400px;
+  width: 100%;
+  margin-right: auto;
+  position: relative;
+}
+#content .content form .form-input {
+  left: 300px;
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+#content .content form .form-input input {
+  flex-grow: 1;
+  padding: 0 16px;
+  height: 100%;
+  border: none;
+  background: #eee;
+  border-radius: 36px 0 0 36px;
+  outline: none;
+  width: 100%;
+  color: #0c0c1e;
+}
+#content .content form .form-input .search-btn {
+  width: 36px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3c91e6;
+  color: #f9f9f9;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 0 36px 36px 0;
+  cursor: pointer;
+}
+#content .content::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: -40px;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: -20px -20px 0 #f9f9f9;
+}
+#content .content a {
+  color: #0c0c1e;
+}
+#content .content .bx.bx-menu {
+  cursor: pointer;
+  color: #0c0c1e;
+}
+#content .content .nav-link {
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+#content .content .nav-link:hover {
+  color: #3c91e6;
+}
+#content .content .profile img {
+  width: 36px;
+  height: 36px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+#content .content .switch-mode {
+  display: block;
+  min-width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  background: #eee;
+  cursor: pointer;
+  position: relative;
+}
+#content .content .switch-mode::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: 21px;
+  background: #3c91e6;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  left: calc(100% - 21px - 2px);
+}
+
+#form .form-content {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#form .form-content .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 4rem;
+  border: 3px solid #3c91e6;
+  border-radius: 10%;
+  gap: 20px;
+}
+#form .form-content .form .error {
+  color: red;
+  font-size: 2rem;
+  display: none;
+}
+#form .form-content .form .error.showError {
+  display: block;
+}
+#form .form-content .form input {
+  width: 400px;
+  padding: 12px;
+  outline: none;
+  border-radius: 20px;
+  border: none;
+  background-color: #eee;
+}
+#form .form-content .form input.oldPrice {
+  text-decoration: line-through;
+}
+#form .form-content .form input::-moz-placeholder {
+  color: rgb(90, 88, 88);
+}
+#form .form-content .form input::placeholder {
+  color: rgb(90, 88, 88);
+}
+#form .form-content .form .addBtn {
+  padding: 12px;
+  width: 200px;
+  text-transform: uppercase;
+  color: #0c0c1e;
+  background-color: #3c91e6;
+  border-radius: 20px;
+  border: 1px solid #3c91e6;
+  transition: all 0.7s;
+}
+#form .form-content .form .addBtn:hover {
+  background-color: transparent;
+}
+
+#table {
+  height: 100vh;
+  width: 81%;
+  position: absolute;
+  right: 0;
+}
+#table .container {
+  width: 100%;
+}
+#table .container table {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+#table .container table thead {
+  background-color: #3c91e6;
+  color: #f9f9f9;
+}
+#table .container table thead tr th {
+  padding: 20px;
+  text-align: left;
+}
+#table .container table tbody {
+  background: #f2f2f2;
+}
+#table .container table tbody tr:nth-child(even) {
+  background: #fff;
+}
+#table .container table tbody tr .oldPrice {
+  text-decoration: line-through;
+  font-style: italic;
+}
+#table .container table tbody tr td {
+  padding: 13px;
+  font-size: 17px;
+  color: #333;
+}
+#table .container table tbody tr td img {
+  width: 50px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#table .container table tbody tr td button {
+  color: #fff;
+  transition: all 0.7s;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 20px;
+}
+#table .container table tbody tr td .delete {
+  background-color: red;
+  border: 1px solid red;
+}
+#table .container table tbody tr td .delete:hover {
+  background-color: transparent;
+  color: #db504a;
+}
+#table .container table tbody tr td .edit {
+  background-color: green;
+  border: 1px solid green;
+}
+#table .container table tbody tr td .edit:hover {
+  background-color: transparent;
+}/*# sourceMappingURL=admin.css.map */

@@ -1,0 +1,140 @@
+body {
+  background-color: #fff;
+}
+
+#products {
+  background-image: url("../img/zass_main_hero33.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 0;
+  position: relative;
+  &::after {
+    background-image: url("../img/ripoff_flip.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    position: absolute;
+    top: -1px;
+    width: 100%;
+    content: "";
+  }
+  &::before {
+    background-image: url("../img/ripoff.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    content: "";
+  }
+  .products {
+    padding-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    h1 {
+      font-size: 44px;
+      color: #fff;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+    .cards {
+      padding: 1rem 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        width: 100%;
+
+        img {
+          width: 100%;
+          aspect-ratio: 1/1;
+          object-fit: cover;
+        }
+        .info-card {
+          padding: 10px 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          h2 {
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 1px;
+          }
+          .productPrice {
+            display: flex;
+            gap: 10px;
+            p {
+              font-weight: bold;
+              font-size: 18px;
+            }
+            .oldPrice {
+              text-decoration: line-through;
+              opacity: 0.5;
+            }
+          }
+
+          .proses {
+            display: flex;
+            .addToCardBtn {
+              border: 1px dashed #f3a395;
+              padding: 10px;
+              background-color: #fff;
+              color: #f3a395;
+              border-radius: 20px;
+              text-transform: uppercase;
+              transition: all 0.6s;
+              &:hover {
+                background-color: #f3a395;
+                color: #fff;
+              }
+            }
+            i {
+              border: 1px dashed #f3a395;
+              height: 30px;
+              width: 30px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #f3a395;
+            }
+          }
+        }
+      }
+    }
+    .allProductBtn {
+      padding: 10px 20px;
+      text-transform: capitalize;
+      background-color: #fff;
+      color: #d68630;
+      font-size: 18px;
+      border: 1px solid #d68630;
+      border-radius: 20px;
+      transition: all 0.7s;
+      &:hover {
+        color: #fff;
+        background-color: #d68630;
+      }
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    padding-top: 9rem;
+    &::after {
+      top: -1px;
+    }
+    .products {
+      .cards {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}
