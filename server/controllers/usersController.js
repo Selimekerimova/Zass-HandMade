@@ -1,9 +1,9 @@
 const Users = require("../models/usersModel");
 
 const singUp = async (req, res) => {
-  const { userName, email, password, password2 } = req.body;
-  if (!userName || !email || !password || !password2) {
-   return res.status(400).send({ message: "fill all inputs" });
+  const { username, email, password, password2 } = req.body;
+  if (!username || !email || !password || !password2) {
+    return res.status(400).send({ message: "fill all inputs" });
   }
   try {
     const user = await Users.findOne({ email: email });
@@ -30,17 +30,17 @@ const singUp = async (req, res) => {
 // login
 const login = async (req, res) => {
   const { email, password } = req.body;
-  if(!email || !password){
-    return res.status(400).send({message:"fill all info"})
+  if (!email || !password) {
+    return res.status(400).send({ message: "fill all info" });
   }
   try {
-    const user = await Users.findOne({email:email})
-    if(!user){
-    return  res.status(400).send({message:"password or email false"})
+    const user = await Users.findOne({ email: email, password: password });
+    if (!user) {
+      return res.status(400).send({ message: "password or email false" });
     }
-    res.status(200).send({message:"successfuly login"})
+    res.status(200).send({ message: "successfuly login" });
   } catch (error) {
-    res.send({message: error.message}).status(500)
+    res.send({ message: error.message }).status(500);
   }
 };
 const getAllUsers = async (req, res) => {
@@ -55,5 +55,5 @@ const getAllUsers = async (req, res) => {
 module.exports = {
   getAllUsers,
   singUp,
-  login
+  login,
 };

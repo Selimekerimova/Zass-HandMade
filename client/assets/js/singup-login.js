@@ -40,36 +40,21 @@ passwordIcon.forEach((item) => {
 formRegister.addEventListener("submit", async function (e) {
   e.preventDefault();
 
- let userObj = {
-    email: loginEmail.value,
-    password: loginPassword.value,
-  };
-  try {
-    const response = await axios.post(`${BASE_URL}/singUp`, userObj);
-    if (response.status === 200) {
-      window.location.href = `home.html`;
-    }
-  } catch (error) {
-    alert("User not found");
-  }
-
-
   let userInfo = {
     username: username.value,
     email: signupEmail.value,
     password: signupPassword.value,
     password2: password2.value,
   };
+
   try {
-    const response = await axios.post(`${BASE_URL}/login`, userInfo);
+    const response = await axios.post(`${BASE_URL}/signup`, userInfo);
     if (response.status === 200) {
-      window.location.href = "home.html";
+      window.location.href = `home.html`;
     }
   } catch (error) {
-    alert("User not found");
+    console.log(error);
   }
-
- 
 
   validateInputs();
 });
@@ -83,14 +68,13 @@ formLogin.addEventListener("submit", async function (e) {
     password: loginPassword.value,
   };
   try {
-    const response = await axios.post(`${BASE_URL}/singUp`, userObj);
+    const response = await axios.post(`${BASE_URL}/login`, userObj);
     if (response.status === 200) {
       window.location.href = `home.html`;
     }
   } catch (error) {
     alert("User not found");
   }
-  
 });
 
 // input empty
