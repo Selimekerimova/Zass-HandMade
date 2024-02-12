@@ -1,8 +1,5 @@
 const cards = document.querySelector(".cards");
 let favCount = document.querySelector(".favCount");
-
-
-
 let favProducts = getProductLocaleStorage();
 favoriteCount(favProducts.length);
 

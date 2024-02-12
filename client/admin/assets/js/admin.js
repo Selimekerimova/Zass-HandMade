@@ -1,3 +1,5 @@
+// const { log } = require("console");
+
 const allSideMenu = document.querySelectorAll("#sidebar .side-menu.top li a");
 const form = document.querySelector(".form");
 const addBtn = document.querySelector(".addBtn");
@@ -11,6 +13,7 @@ const photo = document.querySelector(".photo");
 const category = document.querySelector(".category");
 let base64;
 let id;
+let editElem;
 const BASE_URL = `http://localhost:8080`;
 allSideMenu.forEach((item) => {
   const li = item.parentElement;
@@ -87,7 +90,19 @@ function drawTable(data) {
       }
     });
 
-  
+    editBtn.addEventListener("click", function () {
+      id = item._id;
+      editElem = item;
+      addBtn.textContent = "Edit";
+      console.log(editElem);
+      editProduct();
+      // img.value=item.img
+      //   productName.value=item.productName
+      //   price.value=item.price
+      //   oldPrice.value=item.oldPrice
+      //   description.value=item.description
+      //   category.value=item.category
+    });
   });
 }
 
@@ -96,20 +111,20 @@ form.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   let obj = {
-    photo: base64,
+    img: base64,
     productName: productName.value,
     price: price.value,
     oldPrice: oldPrice.value,
-    desc: description.value,
+    description: description.value,
     category: category.value,
   };
+
   // console.log(obj);
-  if (addBtn.innerText === "ADD") {
+  if (addBtn.textContent.toLocaleLowerCase() === "add") {
     try {
       if (productName.value && price.value && description.value) {
-        // await axios.post(`${BASE_URL}/products`, obj);
+        let res = await axios.post(`${BASE_URL}/products`, obj);
         errorText.classList.remove("showError");
-
       } else {
         errorText.classList.add("showError");
       }
@@ -117,10 +132,23 @@ form.addEventListener("submit", async function (e) {
       console.log(error);
     }
   } else {
-    console.log("sad");
-   
+    await axios.patch(`${BASE_URL}/products/${id}`, obj);
+    addBtn.innerText = "Add";
+    // console.log(id);
   }
 });
+
+// edit function
+
+function editProduct() {
+  // photo.value = editElem.img;
+  productName.value = editElem.productName;
+  price.value = editElem.price;
+  oldPrice.value = editElem.oldPrice;
+  description.value = editElem.description;
+  category.value = editElem.category;
+}
+
 // base 64
 photo.addEventListener("change", async function (e) {
   uploadImage(e);

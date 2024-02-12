@@ -4,7 +4,6 @@ const formRegister = document.querySelector(".register"),
   registerBtn = document.querySelector("#signup"),
   formContainer = document.querySelector(".form-container"),
   passwordIcon = document.querySelectorAll(".fa-eye-slash");
-BASE_URL = `http://localhost:8080`;
 let username = document.querySelector(".username");
 let loginEmail = document.querySelector(".login-email");
 let signupEmail = document.querySelector(".signup-email");
@@ -38,40 +37,39 @@ passwordIcon.forEach((item) => {
 });
 
 // sign up
-formRegister.addEventListener("submit",async function (e) {
+formRegister.addEventListener("submit", async function (e) {
   e.preventDefault();
-  // let bool = users.some(
-  //   (item) => item.email == signupEmail.value && item.username == username.value
-  // );
-  // if (!bool) {
-  //   if (
-  //     username.value != "" &&
-  //     signupEmail.value != "" &&
-  //     signupPassword.value != "" &&
-  //     password2.value != ""
-  //   ) {
-      let userInfo = {
-        // id: Date.now(),
-        username: username.value,
-        email: signupEmail.value,
-        password: signupPassword.value,
-        password2: password2.value,
-      };
-      try {
-        const response= await axios.post(`${BASE_URL}/login`,userInfo)
-        if(response.status===200){
-          window.location.href="home.html"
-        }
-      } catch (error) {
-        alert("User not found")
-      }
-      
-  //     users.push(userInfo);
-  //     localStorage.setItem("user", JSON.stringify(users));
-  //   }
-  // } else {
-  //   confirm("User is already registered");
-  // }
+
+ let userObj = {
+    email: loginEmail.value,
+    password: loginPassword.value,
+  };
+  try {
+    const response = await axios.post(`${BASE_URL}/singUp`, userObj);
+    if (response.status === 200) {
+      window.location.href = `home.html`;
+    }
+  } catch (error) {
+    alert("User not found");
+  }
+
+
+  let userInfo = {
+    username: username.value,
+    email: signupEmail.value,
+    password: signupPassword.value,
+    password2: password2.value,
+  };
+  try {
+    const response = await axios.post(`${BASE_URL}/login`, userInfo);
+    if (response.status === 200) {
+      window.location.href = "home.html";
+    }
+  } catch (error) {
+    alert("User not found");
+  }
+
+ 
 
   validateInputs();
 });
@@ -85,28 +83,14 @@ formLogin.addEventListener("submit", async function (e) {
     password: loginPassword.value,
   };
   try {
-    const response = await axios.post(`${BASE_URL}/login`, userObj);
-  if (response.status === 200) {
-    window.location.href = `home.html`;
-  }
+    const response = await axios.post(`${BASE_URL}/singUp`, userObj);
+    if (response.status === 200) {
+      window.location.href = `home.html`;
+    }
   } catch (error) {
-    alert("User not found")
+    alert("User not found");
   }
-  // let userId;
-  //   let user = users.find((item) => {
-  //     return item.email === loginEmail.value &&
-  //       item.password === loginPassword.value
-  //       ? (userId = item.id)
-  //       : null;
-  //   });
-  //   if (user) {
-  //     window.location.href = `home.html?id=${userId}`;
-  //     // console.log(userId);
-  //   } else {
-  //     confirm("User not found");
-  //   }
-
-  //   // console.log(userId);
+  
 });
 
 // input empty
