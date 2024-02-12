@@ -3,6 +3,11 @@ const header = document.querySelector("header"),
   menuIcon = document.querySelector(".fa-bars"),
   BASE_URL = `http://localhost:8080`;
 
+const loading = document.querySelector("#loading");
+// loading
+window.addEventListener("load", function () {
+  loading.style.display = "none";
+});
 menuIcon.addEventListener("click", function () {
   nav.classList.toggle("responsive-menu");
   menuIcon.classList.toggle("fa-xmark");

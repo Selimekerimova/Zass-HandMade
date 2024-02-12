@@ -1,5 +1,3 @@
-// const { log } = require("console");
-
 const allSideMenu = document.querySelectorAll("#sidebar .side-menu.top li a");
 const form = document.querySelector(".form");
 const addBtn = document.querySelector(".addBtn");
@@ -11,9 +9,11 @@ const oldPrice = document.querySelector(".oldPrice");
 const description = document.querySelector(".desc");
 const photo = document.querySelector(".photo");
 const category = document.querySelector(".category");
+let searchInput = document.querySelector(".search");
 let base64;
 let id;
 let editElem;
+let data;
 const BASE_URL = `http://localhost:8080`;
 allSideMenu.forEach((item) => {
   const li = item.parentElement;
@@ -39,6 +39,7 @@ async function getAllData(endpoint) {
   try {
     let res = await axios(`${BASE_URL}/${endpoint}`);
     // console.log(res.data);
+    data = res.data;
     drawTable(res.data);
   } catch (error) {
     console.log(error);
@@ -96,12 +97,6 @@ function drawTable(data) {
       addBtn.textContent = "Edit";
       console.log(editElem);
       editProduct();
-      // img.value=item.img
-      //   productName.value=item.productName
-      //   price.value=item.price
-      //   oldPrice.value=item.oldPrice
-      //   description.value=item.description
-      //   category.value=item.category
     });
   });
 }
@@ -171,3 +166,13 @@ const convertBase64 = async (file) => {
     };
   });
 };
+
+searchInput.addEventListener("input", function (e) {
+  // console.log(e.target.value);
+  let filtered = data.filter((item) =>
+    item.username
+      .toLocaleLowerCase()
+      .includes(e.target.value.toLocaleLowerCase())
+  );
+  drawTable(filtered);
+});

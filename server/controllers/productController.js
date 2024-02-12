@@ -20,7 +20,7 @@ const getAllProductsById = async (req, res) => {
     res.status(500).send({ message: error.message });
   }
 };
-
+// delete
 const deleteProductById = async (req, res) => {
   const { id } = req.params;
   try {

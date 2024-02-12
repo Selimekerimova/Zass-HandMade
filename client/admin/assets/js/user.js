@@ -3,7 +3,8 @@ const form = document.querySelector(".form");
 const addBtn = document.querySelector(".addBtn");
 const errorText = document.querySelector(".error");
 const tbody = document.querySelector("tbody");
-
+const searchInput = document.querySelector(".search");
+let data;
 const BASE_URL = `http://localhost:8080`;
 allSideMenu.forEach((item) => {
   const li = item.parentElement;
@@ -28,13 +29,14 @@ menuBar.addEventListener("click", function () {
 async function getAllData(endpoint) {
   try {
     let res = await axios(`${BASE_URL}/${endpoint}`);
-    console.log(res.data);
+    // console.log(res.data);
+    data = res.data;
     drawTable(res.data);
   } catch (error) {
     console.log(error);
   }
 }
-getAllData("singUp");
+getAllData("users");
 
 // table
 function drawTable(data) {
@@ -53,3 +55,13 @@ function drawTable(data) {
     tbody.append(tr);
   });
 }
+
+searchInput.addEventListener("input", function (e) {
+  // console.log(e.target.value);
+  let filtered = data.filter((item) =>
+    item.username
+      .toLocaleLowerCase()
+      .includes(e.target.value.toLocaleLowerCase())
+  );
+  drawTable(filtered);
+});

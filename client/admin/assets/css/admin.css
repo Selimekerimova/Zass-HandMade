@@ -350,4 +350,74 @@
 }
 #table .container table tbody tr td .edit:hover {
   background-color: transparent;
+}
+
+#userTable {
+  margin-top: 20rem;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  right: 0;
+}
+#userTable .container {
+  width: 100%;
+}
+#userTable .container table {
+  width: 78%;
+  position: absolute;
+  right: 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+#userTable .container table thead {
+  background-color: #3c91e6;
+  color: #f9f9f9;
+}
+#userTable .container table thead tr th {
+  padding: 20px;
+  text-align: left;
+}
+#userTable .container table tbody {
+  background: #f2f2f2;
+}
+#userTable .container table tbody tr:nth-child(even) {
+  background: #fff;
+}
+#userTable .container table tbody tr .oldPrice {
+  text-decoration: line-through;
+  font-style: italic;
+}
+#userTable .container table tbody tr td {
+  padding: 13px;
+  font-size: 17px;
+  color: #333;
+}
+#userTable .container table tbody tr td img {
+  width: 50px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#userTable .container table tbody tr td button {
+  color: #fff;
+  transition: all 0.7s;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 20px;
+}
+#userTable .container table tbody tr td .delete {
+  background-color: red;
+  border: 1px solid red;
+}
+#userTable .container table tbody tr td .delete:hover {
+  background-color: transparent;
+  color: #db504a;
+}
+#userTable .container table tbody tr td .edit {
+  background-color: green;
+  border: 1px solid green;
+}
+#userTable .container table tbody tr td .edit:hover {
+  background-color: transparent;
 }/*# sourceMappingURL=admin.css.map */
