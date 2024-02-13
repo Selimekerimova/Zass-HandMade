@@ -1,7 +1,7 @@
 const header = document.querySelector("header"),
   nav = document.querySelector("nav"),
   menuIcon = document.querySelector(".fa-bars"),
-  BASE_URL = `http://localhost:8080`;
+  BASE_URL = `https://zass-handmade-backend.onrender.com`;
 
 const loading = document.querySelector("#loading");
 // loading

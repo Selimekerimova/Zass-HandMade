@@ -1,7 +1,7 @@
 let product = document.querySelector(".product");
 let favProducts = getProductLocaleStorage();
 let backToIcon = document.querySelector(".fa-xmark");
-const BASE_URL = `http://localhost:8080`;
+const BASE_URL = `https://zass-handmade-backend.onrender.com`;
 const loading = document.querySelector("#loading");
 // loading
 window.addEventListener("load",function(){

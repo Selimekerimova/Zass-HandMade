@@ -14,7 +14,7 @@ let base64;
 let id;
 let editElem;
 let data;
-const BASE_URL = `http://localhost:8080`;
+const BASE_URL = `https://zass-handmade-backend.onrender.com`;
 allSideMenu.forEach((item) => {
   const li = item.parentElement;
 
