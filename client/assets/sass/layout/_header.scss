@@ -141,7 +141,20 @@ header {
                 color: #fff;
                 transition: all 0.5s;
                 position: relative;
-                .favCount,
+                .favCount{
+                  width: 25px;
+                  height: 25px;
+                  font-size: 10px;
+                  position: absolute;
+                  top: -20px;
+                  left: 8px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background-color: #f3a395;
+                  color: #fff;
+                }
                 .basketCount {
                   width: 25px;
                   height: 25px;
@@ -156,9 +169,7 @@ header {
                   background-color: #f3a395;
                   color: #fff;
                 }
-                .favCount {
-                  background-color: #111;
-                }
+               
                 &:hover {
                   color: #f3a395;
                 }

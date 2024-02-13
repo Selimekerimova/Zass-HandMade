@@ -260,9 +260,6 @@
   border: none;
   background-color: #eee;
 }
-#form .form-content .form input.oldPrice {
-  text-decoration: line-through;
-}
 #form .form-content .form input::-moz-placeholder {
   color: rgb(90, 88, 88);
 }

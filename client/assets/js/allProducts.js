@@ -2,8 +2,10 @@ const cards = document.querySelector(".cards"),
   loadMoreBtn = document.querySelector(".loadMore");
 
 let favCount = document.querySelector(".favCount");
-let limit = 3;
+let basketCount = document.querySelector(".basketCount");
+let limit = 5;
 let favProducts = getProductLocaleStorage();
+let basketProduct = getToBasketProductLocaleStorage();
 let products;
 favoriteCount(favProducts.length);
 async function getAllData(endpoint) {
@@ -30,7 +32,6 @@ function drawCard(data) {
     let productPrice = document.createElement("p");
     let productOldPrice = document.createElement("p");
     let addToCardBtn = document.createElement("button");
-    let buyButton = document.createElement("button");
     let eyeIcon = document.createElement("i");
     let favIcon = document.createElement("i");
 
@@ -39,7 +40,6 @@ function drawCard(data) {
     productPrice.innerHTML = `$${element.price}`;
     productOldPrice.innerHTML = `${element.oldPrice}`;
     addToCardBtn.innerHTML = "Add to card";
-    buyButton.innerHTML = "Buy";
 
     cardDiv.className = "card";
     cardInfoDiv.className = "info-card";
@@ -47,7 +47,6 @@ function drawCard(data) {
     prosesDiv.className = "proses";
     productOldPrice.className = "oldPrice";
     addToCardBtn.className = "addToCardBtn";
-    buyButton.className = "addToCardBtn";
     eyeIcon.className = "fa-solid fa-eye";
 
     favIcon.className = favProducts.find((item) => item._id == element._id)
@@ -57,17 +56,14 @@ function drawCard(data) {
     cardDiv.append(image, cardInfoDiv);
     cardInfoDiv.append(productName, pricesDiv, prosesDiv);
     pricesDiv.append(productPrice, productOldPrice);
-    prosesDiv.append(addToCardBtn, favIcon, eyeIcon, buyButton);
+    prosesDiv.append(addToCardBtn, favIcon, eyeIcon);
     cards.append(cardDiv);
 
     // detail page
     eyeIcon.addEventListener("click", function () {
       window.location.href = `detail.html?id=${element._id}`;
     });
-    // card info page
-    buyButton.addEventListener("click", function () {
-      window.location.href = "card-info.html";
-    });
+
     // add to fav
 
     favIcon.addEventListener("click", function () {
@@ -87,12 +83,26 @@ function drawCard(data) {
       setProductLocaleStorage(favProduct);
       favoriteCount(favProduct.length);
     });
+
+    // add to basket
+    addToCardBtn.addEventListener("click", function () {
+      // console.log("clicked");
+      let basketData = getToBasketProductLocaleStorage();
+      let basketIndex = basketData.findIndex((item) => item._id == element._id);
+      if (basketIndex == -1) {
+        basketData.push(element);
+      } else {
+        basketData.slice(basketIndex, 1);
+      }
+      setToBasketProductLocaleStorage(basketData);
+      allBasketCount(basketData.length);
+    });
   });
 }
 
 // load more
 loadMoreBtn.addEventListener("click", function () {
-  limit += 3;
+  limit += 5;
   drawCard(products.slice(0, limit));
   if (limit >= products.length) {
     loadMoreBtn.remove();
@@ -103,10 +113,18 @@ loadMoreBtn.addEventListener("click", function () {
 function setProductLocaleStorage(arr) {
   localStorage.setItem("fav", JSON.stringify(arr));
 }
+// settoBasketLocaleStorage
+function setToBasketProductLocaleStorage(arr) {
+  localStorage.setItem("basket", JSON.stringify(arr));
+}
 
 // getLocaleStorage
 function getProductLocaleStorage() {
   return JSON.parse(localStorage.getItem("fav")) || [];
+}
+// gettoBasketLocaleStorage
+function getToBasketProductLocaleStorage() {
+  return JSON.parse(localStorage.getItem("basket")) || [];
 }
 
 // // fav count
@@ -114,3 +132,9 @@ function getProductLocaleStorage() {
 function favoriteCount(count) {
   favCount.textContent = count;
 }
+favoriteCount(favCount.length)
+// // basket count
+function allBasketCount(number) {
+  basketCount.textContent = number;
+}
+allBasketCount(basketProduct.length);

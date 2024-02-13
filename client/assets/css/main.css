@@ -285,8 +285,7 @@ header .header nav ul .icons li a .fa-solid {
   transition: all 0.5s;
   position: relative;
 }
-header .header nav ul .icons li a .fa-solid .favCount,
-header .header nav ul .icons li a .fa-solid .basketCount {
+header .header nav ul .icons li a .fa-solid .favCount {
   width: 25px;
   height: 25px;
   font-size: 10px;
@@ -300,8 +299,19 @@ header .header nav ul .icons li a .fa-solid .basketCount {
   background-color: #f3a395;
   color: #fff;
 }
-header .header nav ul .icons li a .fa-solid .favCount {
-  background-color: #111;
+header .header nav ul .icons li a .fa-solid .basketCount {
+  width: 25px;
+  height: 25px;
+  font-size: 10px;
+  position: absolute;
+  top: -20px;
+  left: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3a395;
+  color: #fff;
 }
 header .header nav ul .icons li a .fa-solid:hover {
   color: #f3a395;
@@ -425,6 +435,11 @@ header .header nav .fa-bars {
 .scrollBtnDiv .scrollBtn:hover i {
   color: red;
   font-size: 2rem;
+}
+@media only screen and (max-width: 767px) {
+  .scrollBtnDiv .scrollBtn {
+    left: 20px;
+  }
 }
 
 #main-swiper {
@@ -570,6 +585,48 @@ header .header nav .fa-bars {
   #hero-banner .hero-banner .card {
     width: 70%;
   }
+}
+
+#counter-wrapper {
+  padding: 2rem 0;
+  position: relative;
+  z-index: -1;
+}
+#counter-wrapper .wrapper {
+  padding: 7rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+#counter-wrapper .wrapper .counter {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #18f98f;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 1rem;
+  justify-content: center;
+  text-align: center;
+  background-color: #111;
+  border-bottom: 1rem solid #18f98f;
+  border-radius: 20px;
+}
+#counter-wrapper .wrapper .counter i {
+  color: #18f98f;
+  font-size: 2.5rem;
+  text-align: center;
+}
+#counter-wrapper .wrapper .counter .timer {
+  color: #18f98f;
+  display: grid;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+#counter-wrapper .wrapper .counter .count-text {
+  color: #18f98f;
 }
 
 #product-swiper {
@@ -1091,6 +1148,7 @@ body {
 
 #products {
   background-image: url("../img/zass_main_hero33.jpg");
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1133,15 +1191,15 @@ body {
 #products .products .cards {
   padding: 1rem 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
 #products .products .cards .card {
+  box-shadow: 0 20px 20px #111;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  width: 100%;
 }
 #products .products .cards .card img {
   width: 100%;
@@ -1213,7 +1271,22 @@ body {
   color: #fff;
   background-color: #d68630;
 }
+@media only screen and (max-width: 1100px) {
+  #products .products .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (max-width: 900px) {
+  #products .products .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media only screen and (max-width: 767px) {
+  #products .products .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 400px) {
   #products {
     padding-top: 9rem;
   }
@@ -1844,6 +1917,70 @@ body {
 iframe {
   width: 100%;
   height: 100vh;
+}
+
+#basketTable {
+  height: 100vh;
+}
+#basketTable .container {
+  width: 100%;
+}
+#basketTable .container table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+#basketTable .container table thead {
+  background-color: #3c91e6;
+  color: #f9f9f9;
+}
+#basketTable .container table thead tr th {
+  padding: 20px;
+  text-align: left;
+}
+#basketTable .container table tbody {
+  background: #f2f2f2;
+}
+#basketTable .container table tbody tr:nth-child(even) {
+  background: #fff;
+}
+#basketTable .container table tbody tr .oldPrice {
+  text-decoration: line-through;
+  font-style: italic;
+}
+#basketTable .container table tbody tr td {
+  padding: 13px;
+  font-size: 17px;
+  color: #333;
+}
+#basketTable .container table tbody tr td img {
+  width: 50px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#basketTable .container table tbody tr td button {
+  color: #fff;
+  transition: all 0.7s;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 20px;
+}
+#basketTable .container table tbody tr td .delete {
+  background-color: red;
+  border: 1px solid red;
+}
+#basketTable .container table tbody tr td .delete:hover {
+  background-color: transparent;
+  color: #db504a;
+}
+#basketTable .container table tbody tr td .edit {
+  background-color: green;
+  border: 1px solid green;
+}
+#basketTable .container table tbody tr td .edit:hover {
+  background-color: transparent;
 }
 
 #account {

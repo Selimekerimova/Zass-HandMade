@@ -24,8 +24,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <!-- aos css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- main css -->
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <!-- aos js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- common js -->
@@ -46,7 +50,7 @@
   <body>
     <!-- loading -->
     <div id="loading">
-      <img src="./assets/img/Rolling-1s-200px.gif" alt="">
+      <img src="./assets/img/Rolling-1s-200px.gif" alt="loading" />
     </div>
     <!-- header -->
     <header>
@@ -62,10 +66,10 @@
           </a>
           <nav>
             <ul>
-              <li class="active"><a href="./index.html">Home</a></li>
-              <li><a href="./index.html">Shop</a></li>
+              <li class="active"><a href="./home.html">Home</a></li>
+              <li><a href="./allProducts.html">Shop</a></li>
               <li>
-                <a href="./index.html">Blog </a>
+                <a href="./home.html">Blog </a>
                 <ul class="drapdown">
                   <li><a href="#">Masonry No Sidebar</a></li>
                   <li><a href="#">Blog Standard</a></li>
@@ -76,13 +80,12 @@
                 <ul class="drapdown">
                   <li><a href="about.html">About us</a></li>
                   <li><a href="whatWeDo.html">What We Do</a></li>
-                  <li><a href="#">Contacts</a></li>
-                  <li><a href="#">Coming Soon </a></li>
-                  <li><a href="#">My Account </a></li>
+                  <li><a href="contact.html">Contacts</a></li>
+                  <li><a href="signup-login.html">My Account </a></li>
                 </ul>
               </li>
-              <li><a href="#">Porfolio</a></li>
-              <li><a href="#">Elements</a></li>
+              <!-- <li><a href="#">Porfolio</a></li>
+              <li><a href="#">Elements</a></li> -->
               <div class="icons">
                 <li>
                   <a href="./signup-login.html"
@@ -91,7 +94,7 @@
                 </li>
 
                 <li>
-                  <a href="./signup-login.html"
+                  <a href="./fav.html"
                     ><i class="fa-solid fa-heart"
                       ><sup class="favCount">0</sup></i
                     ></a
@@ -99,7 +102,7 @@
                 </li>
 
                 <li>
-                  <a href="signup-login.html"
+                  <a href="./basket.html"
                     ><i class="fa-solid fa-bag-shopping"
                       ><sup class="basketCount">0</sup></i
                     ></a
@@ -184,6 +187,38 @@
       </div>
     </div>
 
+    <!-- number counter -->
+    <div id="counter-wrapper">
+      <div class="container">
+        <div class="wrapper">
+          <div class="counter col_fourth">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h2 class="timer count-title count-number" data-to="300">00</h2>
+            <p class="count-text">Product</p>
+          </div>
+
+          <div class="counter col_fourth">
+            <i class="fa-solid fa-users"></i>
+            <h2 class="timer count-title count-number" data-to="700"></h2>
+            <p class="count-text">Users</p>
+          </div>
+
+          <div class="counter col_fourth">
+            <i class="fa-regular fa-message"></i>
+            <h2 class="timer count-title count-number" data-to="900"></h2>
+            <p class="count-text">Message</p>
+          </div>
+
+          <div class="counter col_fourth end">
+            <i class="fa-solid fa-user"></i>
+
+            <h2 class="timer count-title count-number" data-to="157"></h2>
+            <p class="count-text">Team</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--products  -->
 
     <div id="product-swiper">
@@ -221,6 +256,58 @@
         </div>
       </div>
     </div>
+    <!-- decor section -->
+    <div id="decor">
+      <div class="container">
+        <div class="decor">
+          <div class="left content" data-aos="fade-up">
+            <div class="img">
+              <img src="./assets/img/ban55511_zass.jpg" alt="decor photo" />
+            </div>
+            <h1>Home decor</h1>
+            <p>Hand crafted goods</p>
+          </div>
+          <div class="right content" data-aos="fade-up">
+            <div class="img">
+              <img src="./assets/img/ban44411_zass.jpg" alt="decor photo" />
+            </div>
+            <h1>gift ideas</h1>
+            <p>made with love</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- info section -->
+    <div id="info-cards">
+      <div class="container">
+        <div class="info-cards">
+          <div class="info-card" data-aos="fade-down">
+            >
+            <i class="fa fa-truck"></i>
+            <div class="info">
+              <h3>Free Worldwide Delivery</h3>
+              <p>on all orders over $199</p>
+            </div>
+          </div>
+          <div class="info-card" data-aos="fade-down">
+            <i class="fa fa-tags"></i>
+            <div class="info">
+              <h3>30% OFF Coupon Code</h3>
+              <p>use code HAPPY30 on checkout</p>
+            </div>
+          </div>
+          <div class="info-card" data-aos="fade-down">
+            >
+            <i class="fa fa-gift"></i>
+            <div class="info">
+              <h3>use code HAPPY30 on checkout</h3>
+              <p>send vouchers for personalized gifts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Categories -->
     <div id="categorie">
@@ -228,7 +315,12 @@
         <div class="categorie">
           <h3>Product Categories On Focus</h3>
           <div class="cards">
-            <div class="card">
+            <div
+              class="card"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
               <div class="cardContent">
                 <div class="img">
                   <img src="./assets/img/baby_cat.jpg" alt="baby_cat" />
@@ -237,7 +329,12 @@
                 <button class="toys">Baby & Kinds</button>
               </div>
             </div>
-            <div class="card">
+            <div
+              class="card"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
               <div class="cardContent">
                 <div class="img">
                   <img src="./assets/img/celleb_cat.jpg" alt="celleb_cat" />
@@ -246,7 +343,12 @@
                 <button class="art">Art</button>
               </div>
             </div>
-            <div class="card">
+            <div
+              class="card"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
               <div class="cardContent">
                 <div class="img">
                   <img src="./assets/img/home_cat.jpg" alt="home_cat" />
@@ -260,155 +362,133 @@
       </div>
     </div>
 
-    <!-- decor section -->
-    <div id="decor">
+    <!-- footer -->
+    <footer>
       <div class="container">
-        <div class="decor">
-          <div class="left content">
-            <div class="img">
-              <img src="./assets/img/ban55511_zass.jpg" alt="decor photo" />
-            </div>
-            <h1>Home decor</h1>
-            <p>Hand crafted goods</p>
+        <div class="footer">
+          <div class="footer-top">
+            <nav>
+              <h3>Information</h3>
+              <ul>
+                <li>
+                  <a href="#"><i class="fa-solid fa-file-lines"></i>About Us</a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Delivery
+                    Information</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Terms & Conditions</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Contact Us</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav>
+              <h3>Extras</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Our Brands</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Special Offers</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Gift Vouchers</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Affiliates</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav>
+              <h3>Have a Question?</h3>
+              <ul>
+                <li>
+                  <a
+                    ><i class="fa-solid fa-clock"></i>Monday - Friday: 09:00 -
+                    18:30</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ><i class="fa-solid fa-location-pin"></i>409 Mladost
+                    District, Sofia Bulgaria</a
+                  >
+                </li>
+                <li>
+                  <a href="tel:+359 2 123 456"
+                    ><i class="fa-solid fa-phone"></i>+359 2 123 456</a
+                  >
+                </li>
+                <li>
+                  <a href="tel:+359 2 654 321"
+                    ><i class="fa-solid fa-blender-phone"></i>+359 2 654 321</a
+                  >
+                </li>
+                <li>
+                  <a href="mailto:shop@zass.com"
+                    ><i class="fa-solid fa-envelope"></i>shop@zass.com</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav>
+              <h3>Payment Options</h3>
+              <div class="cardIcons">
+                <a href="./card-info.html"
+                  ><img src="./assets/img/card img/card.png" alt="card image"
+                /></a>
+                <a href="card-info.html"
+                  ><img src="./assets/img/card img/cirrus.png" alt="card image"
+                /></a>
+                <a href="./card-info.html">
+                  <img src="./assets/img/card img/maestro.png" alt="card image"
+                /></a>
+                <a href="./card-info.html"
+                  ><img src="./assets/img/card img/paypal.png" alt="card image"
+                /></a>
+                <a href="./card-info.html"
+                  ><img src="./assets/img/card img/symbol.png" alt="card image"
+                /></a>
+                <a href="./card-info.html"
+                  ><img src="./assets/img/card img/visa.png" alt="card image"
+                /></a>
+              </div>
+              <p>You can also place custom seals code here if you wish.</p>
+            </nav>
           </div>
-          <div class="right content">
-            <div class="img">
-              <img src="./assets/img/ban44411_zass.jpg" alt="decor photo" />
-            </div>
-            <h1>gift ideas</h1>
-            <p>made with love</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-pinterest"></i>
           </div>
+          <p>
+            Zass theme by
+            <a href="https://themeforest.net" target="_blank">theAlThemist </a>|
+            © 2019 All rights reserved!
+          </p>
         </div>
       </div>
-    </div>
-
-   <!-- footer -->
-   <footer>
-    <div class="container">
-      <div class="footer">
-        <div class="footer-top">
-          <nav>
-            <h3>Information</h3>
-            <ul>
-              <li>
-                <a href="#"><i class="fa-solid fa-file-lines"></i>About Us</a>
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa-solid fa-file-lines"></i>Delivery
-                  Information</a
-                >
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa-solid fa-file-lines"></i>Terms & Conditions</a
-                >
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa-solid fa-file-lines"></i>Contact Us</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <nav>
-            <h3>Extras</h3>
-            <ul>
-              <li>
-                <a href="#"
-                  ><i class="fa-solid fa-file-lines"></i>Our Brands</a
-                >
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa-solid fa-file-lines"></i>Special Offers</a
-                >
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa-solid fa-file-lines"></i>Gift Vouchers</a
-                >
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa-solid fa-file-lines"></i>Affiliates</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <nav>
-            <h3>Have a Question?</h3>
-            <ul>
-              <li>
-                <a
-                  ><i class="fa-solid fa-clock"></i>Monday - Friday: 09:00 -
-                  18:30</a
-                >
-              </li>
-              <li>
-                <a
-                  ><i class="fa-solid fa-location-pin"></i>409 Mladost
-                  District, Sofia Bulgaria</a
-                >
-              </li>
-              <li>
-                <a href="tel:+359 2 123 456"
-                  ><i class="fa-solid fa-phone"></i>+359 2 123 456</a
-                >
-              </li>
-              <li>
-                <a href="tel:+359 2 654 321"
-                  ><i class="fa-solid fa-blender-phone"></i>+359 2 654 321</a
-                >
-              </li>
-              <li>
-                <a href="mailto:shop@zass.com"
-                  ><i class="fa-solid fa-envelope"></i>shop@zass.com</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <nav>
-            <h3>Payment Options</h3>
-            <div class="cardIcons">
-              <a href="./card-info.html"
-                ><img src="./assets/img/card img/card.png" alt="card image"
-              /></a>
-              <a href="card-info.html"
-                ><img src="./assets/img/card img/cirrus.png" alt="card image"
-              /></a>
-              <a href="./card-info.html">
-                <img src="./assets/img/card img/maestro.png" alt="card image"
-              /></a>
-              <a href="./card-info.html"
-                ><img src="./assets/img/card img/paypal.png" alt="card image"
-              /></a>
-              <a href="./card-info.html"
-                ><img src="./assets/img/card img/symbol.png" alt="card image"
-              /></a>
-              <a href="./card-info.html"
-                ><img src="./assets/img/card img/visa.png" alt="card image"
-              /></a>
-            </div>
-            <p>You can also place custom seals code here if you wish.</p>
-          </nav>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="icons">
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-pinterest"></i>
-        </div>
-        <p>
-          Zass theme by
-          <a href="https://themeforest.net" target="_blank">theAlThemist </a>|
-          © 2019 All rights reserved!
-        </p>
-      </div>
-    </div>
-  </footer>
+    </footer>
   </body>
 </html>

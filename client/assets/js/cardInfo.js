@@ -6,7 +6,8 @@ const cardNumber = document.getElementById("card-number");
 const expiryDate = document.getElementById("expiry-date");
 const cvv = document.getElementById("cvv");
 
-
+// aos
+AOS.init();
 
 // form vali
 // function validateFormData(data) {

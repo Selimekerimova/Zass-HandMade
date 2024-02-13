@@ -1,4 +1,4 @@
-#loading{
+#loading {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,7 +10,6 @@
   background-color: #fff;
   z-index: 999;
 }
-
 
 .scrollBtnDiv {
   display: flex;
@@ -42,6 +41,9 @@
         color: red;
         font-size: 2rem;
       }
+    }
+    @media only screen and (max-width: 767px) {
+      left: 20px;
     }
   }
 }
@@ -198,6 +200,53 @@
     }
   }
 }
+
+// number counter
+#counter-wrapper {
+  // background-color: #111;
+  padding: 2rem 0;
+  position: relative;
+  z-index: -1;
+  .wrapper {
+    // height: 50vh;
+    padding: 7rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    .counter {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #18f98f;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 1rem;
+      justify-content: center;
+      text-align: center;
+      background-color: #111;
+      border-bottom: 1rem solid #18f98f;
+      border-radius: 20px;
+      i {
+        color: #18f98f;
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      .timer {
+        color: #18f98f;
+        display: grid;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+      .count-text {
+        color: #18f98f;
+      }
+    }
+  
+  }
+}
+
 // product swiper
 #product-swiper {
   background-image: url("../img/footer-bg.jpg");
