@@ -65,7 +65,7 @@ function drawTable(data) {
     img.src = item.img;
     productName.innerHTML = item.productName;
     price.innerHTML = item.price;
-    oldPrice.innerHTML = item.oldPrice;
+    oldPrice.innerHTML = item.oldPrice ? item.oldPrice : "";
     category.innerHTML = item.category;
     deleteBtn.innerHTML = "Delete";
     editBtn.innerHTML = "Edit";
@@ -131,6 +131,12 @@ form.addEventListener("submit", async function (e) {
     addBtn.innerText = "Add";
     // console.log(id);
   }
+
+  productName.value = "";
+  price.value = "";
+  oldPrice.value = "";
+  description.value = "";
+  category.value = "";
 });
 
 // edit function
@@ -170,7 +176,7 @@ const convertBase64 = async (file) => {
 searchInput.addEventListener("input", function (e) {
   // console.log(e.target.value);
   let filtered = data.filter((item) =>
-    item.username
+    item.productName
       .toLocaleLowerCase()
       .includes(e.target.value.toLocaleLowerCase())
   );

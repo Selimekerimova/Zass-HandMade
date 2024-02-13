@@ -2,7 +2,8 @@ const cards = document.querySelector(".cards");
 const swiperBtn = document.querySelectorAll(".detailBtn");
 const scrollBtn = document.querySelector(".scrollBtn");
 
-
+// aos
+AOS.init();
 //  Initialize Swiper
 var swiper = new Swiper(".mySwiper", {
   cssMode: true,

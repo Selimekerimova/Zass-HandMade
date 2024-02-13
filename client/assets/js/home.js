@@ -4,8 +4,26 @@ const scrollBtn = document.querySelector(".scrollBtn");
 const toysCategory = document.querySelector(".toysCount");
 const artCategory = document.querySelector(".artCount");
 const homeCategory = document.querySelector(".homeCount");
+const number = document.querySelectorAll(".count-number");
+let interval = 5000;
 let product;
 let productId;
+
+number.forEach((num) => {
+  let startValue = 0;
+  let endValue = parseInt(num.getAttribute("data-to"));
+  let duration = Math.floor(interval / endValue);
+  let counter = setInterval(function () {
+    startValue += 1;
+    num.textContent = startValue;
+    if (startValue == endValue) {
+      clearInterval(counter);
+    }
+  }, duration);
+});
+
+// aos
+AOS.init();
 //  Initialize Swiper
 var swiper = new Swiper(".mySwiper", {
   cssMode: true,

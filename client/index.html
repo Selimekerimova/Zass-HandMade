@@ -24,6 +24,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <!-- aos css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- main css -->
     <link rel="stylesheet" href="./assets/css/main.css" />
     <!-- Swiper JS -->
@@ -38,15 +40,17 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <!-- aos js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- scroll reveral -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- main js -->
     <script defer src="./assets/js/main.js"></script>
   </head>
   <body>
-<div id="loading">
-  <img src="./assets/img/Rolling-1s-200px.gif" alt="loading">
-</div>
+    <div id="loading">
+      <img src="./assets/img/Rolling-1s-200px.gif" alt="loading" />
+    </div>
 
     <!-- header -->
     <header>
@@ -249,14 +253,14 @@
     <div id="decor">
       <div class="container">
         <div class="decor">
-          <div class="left content">
+          <div class="left content" data-aos="fade-right">
             <div class="img">
               <img src="./assets/img/ban55511_zass.jpg" alt="decor photo" />
             </div>
             <h1>Home decor</h1>
             <p>Hand crafted goods</p>
           </div>
-          <div class="right content">
+          <div class="right content" data-aos="fade-left">
             <div class="img">
               <img src="./assets/img/ban44411_zass.jpg" alt="decor photo" />
             </div>
@@ -273,7 +277,12 @@
         <div class="categorie">
           <h3>Product Categories On Focus</h3>
           <div class="cards">
-            <div class="card">
+            <div
+              class="card"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
               <div class="cardContent">
                 <div class="img">
                   <img src="./assets/img/baby_cat.jpg" alt="baby_cat" />
@@ -282,7 +291,12 @@
                 <button class="toys">Baby & Kinds</button>
               </div>
             </div>
-            <div class="card">
+            <div
+              class="card"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
               <div class="cardContent">
                 <div class="img">
                   <img src="./assets/img/celleb_cat.jpg" alt="celleb_cat" />
@@ -291,7 +305,12 @@
                 <button class="art">Art</button>
               </div>
             </div>
-            <div class="card">
+            <div
+              class="card"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+            >
               <div class="cardContent">
                 <div class="img">
                   <img src="./assets/img/home_cat.jpg" alt="home_cat" />
@@ -308,21 +327,33 @@
     <div id="info-cards">
       <div class="container">
         <div class="info-cards">
-          <div class="info-card">
+          <div
+            class="info-card"
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-center"
+          >
             <i class="fa fa-truck"></i>
             <div class="info">
               <h3>Free Worldwide Delivery</h3>
               <p>on all orders over $199</p>
             </div>
           </div>
-          <div class="info-card">
+          <div
+            class="info-card"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-center"
+          >
             <i class="fa fa-tags"></i>
             <div class="info">
               <h3>30% OFF Coupon Code</h3>
               <p>use code HAPPY30 on checkout</p>
             </div>
           </div>
-          <div class="info-card">
+          <div
+            class="info-card"
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-center"
+          >
             <i class="fa fa-gift"></i>
             <div class="info">
               <h3>use code HAPPY30 on checkout</h3>

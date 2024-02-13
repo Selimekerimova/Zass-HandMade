@@ -273,9 +273,7 @@
         border-radius: 20px;
         border: none;
         background-color: #eee;
-        &.oldPrice {
-          text-decoration: line-through;
-        }
+       
         &::placeholder {
           color: rgb(90, 88, 88);
         }

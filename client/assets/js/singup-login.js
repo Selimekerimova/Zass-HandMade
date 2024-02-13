@@ -23,6 +23,9 @@ registerBtn.addEventListener("click", function (e) {
   formContainer.classList.add("active");
 });
 
+// scrollReveal
+ScrollReveal().reveal(".form-container", { delay: 1000 });
+
 // password icon
 passwordIcon.forEach((item) => {
   item.addEventListener("click", function () {
