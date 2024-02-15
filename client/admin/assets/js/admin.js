@@ -1,4 +1,3 @@
-const allSideMenu = document.querySelectorAll("#sidebar .side-menu.top li a");
 const form = document.querySelector(".form");
 const addBtn = document.querySelector(".addBtn");
 const errorText = document.querySelector(".error");
@@ -9,42 +8,33 @@ const oldPrice = document.querySelector(".oldPrice");
 const description = document.querySelector(".desc");
 const photo = document.querySelector(".photo");
 const category = document.querySelector(".category");
-let body = document.querySelector("body");
+// let body = document.querySelector("body");
 let searchInput = document.querySelector(".search");
 let base64;
 let editElem;
 let id;
 let data;
 const BASE_URL = `https://zass-handmade-backend.onrender.com`;
-allSideMenu.forEach((item) => {
-  const li = item.parentElement;
 
-  item.addEventListener("click", function () {
-    allSideMenu.forEach((i) => {
-      i.parentElement.classList.remove("active");
-    });
-    li.classList.add("active");
-  });
-});
 
-// TOGGLE SIDEBAR
-const menuBar = document.querySelector(".bx.bx-menu");
-const sidebar = document.getElementById("sidebar");
+// // TOGGLE SIDEBAR
+// const menuBar = document.querySelector(".bx.bx-menu");
+// const sidebar = document.getElementById("sidebar");
 
-menuBar.addEventListener("click", function () {
-  sidebar.classList.toggle("hide");
-});
+// menuBar.addEventListener("click", function () {
+//   sidebar.classList.toggle("hide");
+// });
 
-// dark mode
-const switchMode = document.getElementById("switch-mode");
+// // dark mode
+// const switchMode = document.getElementById("switch-mode");
 
-switchMode.addEventListener("change", function () {
-  body.classList.toggle('dark');
-  localStorage.setItem('mode',body.classList)
-});
-if (localStorage.getItem("mode") != "") {
-  body.classList.add(localStorage.getItem("mode"));
-}
+// switchMode.addEventListener("change", function () {
+//   body.classList.toggle('dark');
+//   localStorage.setItem('mode',body.classList)
+// });
+// if (localStorage.getItem("mode") != "") {
+//   body.classList.add(localStorage.getItem("mode"));
+// }
 
 
 // get all data

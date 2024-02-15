@@ -43,6 +43,7 @@ var swiper = new Swiper(".mySwiper", {
   keyboard: true,
 });
 
+
 // scroll btn
 window.addEventListener("scroll", function () {
   scrollBtn.classList.toggle("scrollBtnShow", scrollY > 400);
@@ -74,8 +75,7 @@ async function getAllTeam(endpoint) {
   try {
     let res = await axios(`${BASE_URL}/${endpoint}`);
     // console.log(res.data);
-    // product = res.data;
-    // drawCard(res.data);
+   
     drawTeamCard(res.data);
   } catch (error) {
     console.log(error);

@@ -28,12 +28,13 @@
     ></script>
     <!-- admin css link -->
     <link rel="stylesheet" href="./assets/css/admin.css" />
+    <!-- common js -->
+    <script defer src="./assets/js/common.js"></script>
     <!-- user js -->
     <script defer src="./assets/js/user.js"></script>
   </head>
   <body>
-       <!-- SIDEBAR -->
-         <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
     <section id="sidebar">
       <a class="brand">
         <i class="bx bxs-smile"></i>
@@ -80,44 +81,43 @@
         </li>
       </ul>
     </section>
-  
-      <!-- navbar -->
-      <nav id="content">
-        <div class="container">
-          <div class="content">
-            <i class="bx bx-menu"></i>
-            <form>
-              <div class="form-input">
-                <input type="search" placeholder="Search..." class="search"/>
-                <button type="submit" class="search-btn">
-                  <i class="bx bx-search"></i>
-                </button>
-              </div>
-            </form>
-            <input type="checkbox" id="switch-mode" hidden />
-            <label for="switch-mode" class="switch-mode"></label>
-  
-            <a href="#" class="profile">
-              <img src="img/people.png" />
-            </a>
-          </div>
-        </div>
-      </nav>
 
-  
-      <!-- product table -->
-      <div id="userTable">
-        <div class="container">
-          <table>
-            <thead>
-              <tr>
-                  <th>Username</th>
-                  <th>Email</th>
-                  <th>Password</th>
+    <!-- navbar -->
+    <nav id="content">
+      <div class="container">
+        <div class="content">
+          <i class="bx bx-menu"></i>
+          <form>
+            <div class="form-input">
+              <input type="search" placeholder="Search..." class="search" />
+              <button type="submit" class="search-btn">
+                <i class="bx bx-search"></i>
+              </button>
+            </div>
+          </form>
+          <input type="checkbox" id="switch-mode" hidden />
+          <label for="switch-mode" class="switch-mode"></label>
+
+          <a href="#" class="profile">
+            <img src="img/people.png" />
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- product table -->
+    <div id="userTable">
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Password</th>
             </tr>
-            </thead>
-            <tbody>
-              <!-- <tr>
+          </thead>
+          <tbody>
+            <!-- <tr>
                 <td><img src="../assets/img/baby_cat.jpg" alt=""></td>
                 <td>toys</td>
                 <td>$150.00</td>
@@ -128,9 +128,9 @@
                   <button class="edit">Edit</button>
                 </td>
               </tr> -->
-            </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
       </div>
+    </div>
   </body>
 </html>
