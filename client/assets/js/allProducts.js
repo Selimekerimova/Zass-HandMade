@@ -38,7 +38,9 @@ function drawCard(data) {
     image.src = `${element.img}`;
     productName.innerHTML = `${element.productName.substring(0, 20)}...`;
     productPrice.innerHTML = `$${element.price}`;
-    productOldPrice.innerHTML = `${element.oldPrice}`;
+    // productOldPrice.innerHTML = `${element.oldPrice}`;
+    productOldPrice.innerHTML = element.oldPrice ? element.oldPrice : "";
+
     addToCardBtn.innerHTML = "Add to card";
 
     cardDiv.className = "card";
@@ -87,15 +89,20 @@ function drawCard(data) {
     // add to basket
     addToCardBtn.addEventListener("click", function () {
       // console.log("clicked");
-      let basketData = getToBasketProductLocaleStorage();
-      let basketIndex = basketData.findIndex((item) => item._id == element._id);
-      if (basketIndex == -1) {
-        basketData.push(element);
+
+      let product = products.find((item) => item._id == element._id);
+      // let basketData = getToBasketProductLocaleStorage();
+      let basketIndex = basketProduct?.findIndex(
+        (item) => item.product._id == element._id
+      );
+      if (basketIndex > -1) {
+        basketProduct[basketIndex].count = basketProduct[basketIndex].count + 1;
       } else {
-        basketData.slice(basketIndex, 1);
+        basketProduct.push({ count: 1, product: product });
       }
-      setToBasketProductLocaleStorage(basketData);
-      allBasketCount(basketData.length);
+      console.log();
+      setToBasketProductLocaleStorage(basketProduct);
+      allBasketCount();
     });
   });
 }
@@ -109,15 +116,15 @@ loadMoreBtn.addEventListener("click", function () {
   }
 });
 
-// setLocaleStorage
-function setProductLocaleStorage(arr) {
-  localStorage.setItem("fav", JSON.stringify(arr));
-}
 // settoBasketLocaleStorage
 function setToBasketProductLocaleStorage(arr) {
   localStorage.setItem("basket", JSON.stringify(arr));
 }
 
+// setLocaleStorage
+function setProductLocaleStorage(arr) {
+  localStorage.setItem("fav", JSON.stringify(arr));
+}
 // getLocaleStorage
 function getProductLocaleStorage() {
   return JSON.parse(localStorage.getItem("fav")) || [];
@@ -132,9 +139,12 @@ function getToBasketProductLocaleStorage() {
 function favoriteCount(count) {
   favCount.textContent = count;
 }
-favoriteCount(favCount.length)
+favoriteCount(favProducts.length);
 // // basket count
-function allBasketCount(number) {
-  basketCount.textContent = number;
+function allBasketCount() {
+  basketCount.textContent = basketProduct.reduce(
+    (acc, curr) => acc + curr.count,
+    0
+  );
 }
-allBasketCount(basketProduct.length);
+allBasketCount();

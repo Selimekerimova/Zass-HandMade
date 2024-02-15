@@ -5,6 +5,9 @@ const toysCategory = document.querySelector(".toysCount");
 const artCategory = document.querySelector(".artCount");
 const homeCategory = document.querySelector(".homeCount");
 const number = document.querySelectorAll(".count-number");
+let categoryLinkElem = document.querySelectorAll(".category");
+let teamCards = document.querySelector(".team-cards");
+
 let interval = 5000;
 let product;
 let productId;
@@ -62,11 +65,24 @@ async function getAllData(endpoint) {
     // console.log(res.data);
     product = res.data;
     drawCard(res.data);
+    // drawTeamCard(res.data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function getAllTeam(endpoint) {
+  try {
+    let res = await axios(`${BASE_URL}/${endpoint}`);
+    // console.log(res.data);
+    // product = res.data;
+    // drawCard(res.data);
+    drawTeamCard(res.data);
   } catch (error) {
     console.log(error);
   }
 }
 getAllData("products");
+getAllTeam("team");
 
 // drawCard
 function drawCard(data) {
@@ -132,3 +148,58 @@ function drawCard(data) {
     }
   });
 }
+
+// draw team card
+function drawTeamCard(data) {
+  teamCards.innerHTML = "";
+  data.forEach((item) => {
+    // console.log(item);
+    teamCards.innerHTML += `
+<div class="card">
+<div class="our-team">
+  <div class="pic">
+    <img src="${item.img}" />
+  </div>
+  <div class="team-content">
+    <h3 class="title">${item.fullname}</h3>
+  </div>
+  <ul class="social">
+    <li>
+      <a class="fa-brands fa-facebook"></a>
+    </li>
+    <li>
+      <a class="fa-brands fa-twitter"></a>
+    </li>
+    <li>
+      <a class="fa-brands fa-google-plus-g"></a>
+    </li>
+    <li>
+      <a class="fa-brands fa-linkedin"></a>
+    </li>
+  </ul>
+</div>
+</div>
+`;
+  });
+}
+
+// category
+categoryLinkElem.forEach((item) =>
+  item.addEventListener("click", function () {
+    if (item.textContent == "HOME & LIVING") {
+      productId = "home";
+      window.location.href = `./category.html?id=${productId}`;
+    }
+    if (item.textContent === "BABY & KINDS") {
+      productId = "baby";
+      window.location.href = `./category.html?id=${productId}`;
+    } else {
+      console.log(item.textContent);
+      console.log("sef");
+    }
+    if (item.textContent === "ART") {
+      productId = "art";
+      window.location.href = `./category.html?id=${productId}`;
+    }
+  })
+);

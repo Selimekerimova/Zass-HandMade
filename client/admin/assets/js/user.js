@@ -5,6 +5,8 @@ const errorText = document.querySelector(".error");
 const tbody = document.querySelector("tbody");
 const searchInput = document.querySelector(".search");
 let data;
+let body = document.querySelector("body");
+
 const BASE_URL = `https://zass-handmade-backend.onrender.com`;
 allSideMenu.forEach((item) => {
   const li = item.parentElement;
@@ -65,3 +67,15 @@ searchInput.addEventListener("input", function (e) {
   );
   drawTable(filtered);
 });
+
+
+// dark mode
+const switchMode = document.getElementById("switch-mode");
+
+switchMode.addEventListener("change", function () {
+  body.classList.toggle('dark');
+  localStorage.setItem('mode',body.classList)
+});
+if (localStorage.getItem("mode") != "") {
+  body.classList.add(localStorage.getItem("mode"));
+}

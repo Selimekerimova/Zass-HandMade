@@ -37,38 +37,42 @@
   <body>
     <!-- loading -->
     <div id="loading">
-      <img src="./assets/img/Rolling-1s-200px.gif" alt="">
+      <img src="./assets/img/Rolling-1s-200px.gif" alt="" />
     </div>
     <!-- header -->
     <header>
       <div class="container">
         <div class="header">
-          <a href="./index.html" class="logo">
-            <img src="./assets/img/logo_ZASS.png" alt="logo" />
+          <a href="./home.html" class="logo">
+            <img
+              src="./assets/img/logo_ZASS_transparent.png"
+              alt="logo"
+              class="logoTransparent"
+            />
+            <img src="./assets/img/logo_ZASS.png" alt="logo" class="logoZass" />
           </a>
           <nav>
             <ul>
-              <li class="active"><a href="./index.html">Home</a></li>
-              <li><a href="./index.html">Shop</a></li>
+              <li class="active"><a href="./home.html">Home</a></li>
+              <li><a href="./allProducts.html">Shop</a></li>
               <li>
-                <a href="./index.html">Blog </a>
+                <a href="./home.html">Blog </a>
                 <ul class="drapdown">
                   <li><a href="#">Masonry No Sidebar</a></li>
                   <li><a href="#">Blog Standard</a></li>
                 </ul>
               </li>
               <li>
-                <a href="#">Pages</a>
+                <a href="about.html">Pages</a>
                 <ul class="drapdown">
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">What We Do</a></li>
-                  <li><a href="#">Contacts</a></li>
-                  <li><a href="#">Coming Soon </a></li>
-                  <li><a href="#">My Account </a></li>
+                  <li><a href="about.html">About us</a></li>
+                  <li><a href="whatWeDo.html">What We Do</a></li>
+                  <li><a href="contact.html">Contacts</a></li>
+                  <li><a href="signup-login.html">My Account </a></li>
                 </ul>
               </li>
-              <li><a href="#">Porfolio</a></li>
-              <li><a href="#">Elements</a></li>
+              <!-- <li><a href="#">Porfolio</a></li>
+          <li><a href="#">Elements</a></li> -->
               <div class="icons">
                 <li>
                   <a href="./signup-login.html"
@@ -77,7 +81,7 @@
                 </li>
 
                 <li>
-                  <a href="fav.html"
+                  <a href="./fav.html"
                     ><i class="fa-solid fa-heart"
                       ><sup class="favCount">0</sup></i
                     ></a
@@ -85,7 +89,7 @@
                 </li>
 
                 <li>
-                  <a href="#"
+                  <a href="./basket.html"
                     ><i class="fa-solid fa-bag-shopping"
                       ><sup class="basketCount">0</sup></i
                     ></a
@@ -93,10 +97,17 @@
                 </li>
 
                 <li>
-                  <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                  <!-- <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a> -->
                 </li>
                 <li>
-                  <a href="#"> <i class="fa-solid fa-list"></i></a>
+                  <a>
+                    <i class="fa-solid fa-list"></i>
+                    <ul class="drapdown">
+                      <li><a class="category">HOME & LIVING</a></li>
+                      <li><a class="category">BABY & KINDS</a></li>
+                      <li><a class="category">ART</a></li>
+                    </ul>
+                  </a>
                 </li>
               </div>
             </ul>
@@ -106,6 +117,8 @@
         </div>
       </div>
     </header>
+
+ 
 
     <!-- product -->
     <div id="products">
@@ -136,114 +149,114 @@
       </div>
     </div>
 
-      <!-- footer -->
-      <footer>
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div class="footer-top">
+            <nav>
+              <h3>Information</h3>
+              <ul>
+                <li>
+                  <a href="#"><i class="fa-solid fa-file-lines"></i>About Us</a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Delivery
+                    Information</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Terms & Conditions</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Contact Us</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav>
+              <h3>Extras</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Our Brands</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Special Offers</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Gift Vouchers</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-file-lines"></i>Affiliates</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav>
+              <h3>Have a Question?</h3>
+              <ul>
+                <li>
+                  <a
+                    ><i class="fa-solid fa-clock"></i>Monday - Friday: 09:00 -
+                    18:30</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ><i class="fa-solid fa-location-pin"></i>409 Mladost
+                    District, Sofia Bulgaria</a
+                  >
+                </li>
+                <li>
+                  <a href="tel:+359 2 123 456"
+                    ><i class="fa-solid fa-phone"></i>+359 2 123 456</a
+                  >
+                </li>
+                <li>
+                  <a href="tel:+359 2 654 321"
+                    ><i class="fa-solid fa-blender-phone"></i>+359 2 654 321</a
+                  >
+                </li>
+                <li>
+                  <a href="mailto:shop@zass.com"
+                    ><i class="fa-solid fa-envelope"></i>shop@zass.com</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav>
+              <h3>Payment Options</h3>
+              <img src="./assets/img/cards-image.PNG" alt="cards photo" />
+              <p>You can also place custom seals code here if you wish.</p>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
         <div class="container">
-          <div class="footer">
-            <div class="footer-top">
-              <nav>
-                <h3>Information</h3>
-                <ul>
-                  <li>
-                    <a href="#"><i class="fa-solid fa-file-lines"></i>About Us</a>
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-file-lines"></i>Delivery
-                      Information</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-file-lines"></i>Terms & Conditions</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-file-lines"></i>Contact Us</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-              <nav>
-                <h3>Extras</h3>
-                <ul>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-file-lines"></i>Our Brands</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-file-lines"></i>Special Offers</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-file-lines"></i>Gift Vouchers</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><i class="fa-solid fa-file-lines"></i>Affiliates</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-              <nav>
-                <h3>Have a Question?</h3>
-                <ul>
-                  <li>
-                    <a
-                      ><i class="fa-solid fa-clock"></i>Monday - Friday: 09:00 -
-                      18:30</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      ><i class="fa-solid fa-location-pin"></i>409 Mladost
-                      District, Sofia Bulgaria</a
-                    >
-                  </li>
-                  <li>
-                    <a href="tel:+359 2 123 456"
-                      ><i class="fa-solid fa-phone"></i>+359 2 123 456</a
-                    >
-                  </li>
-                  <li>
-                    <a href="tel:+359 2 654 321"
-                      ><i class="fa-solid fa-blender-phone"></i>+359 2 654 321</a
-                    >
-                  </li>
-                  <li>
-                    <a href="mailto:shop@zass.com"
-                      ><i class="fa-solid fa-envelope"></i>shop@zass.com</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-              <nav>
-                <h3>Payment Options</h3>
-                <img src="./assets/img/cards-image.PNG" alt="cards photo" />
-                <p>You can also place custom seals code here if you wish.</p>
-              </nav>
-            </div>
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-pinterest"></i>
           </div>
+          <p>
+            Zass theme by
+            <a href="https://themeforest.net" target="_blank">theAlThemist </a>|
+            © 2019 All rights reserved!
+          </p>
         </div>
-        <div class="footer-bottom">
-          <div class="container">
-            <div class="icons">
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-twitter"></i>
-              <i class="fa-brands fa-pinterest"></i>
-            </div>
-            <p>
-              Zass theme by
-              <a href="https://themeforest.net" target="_blank">theAlThemist </a>|
-              © 2019 All rights reserved!
-            </p>
-          </div>
-        </div>
-      </footer>
+      </div>
+    </footer>
   </body>
 </html>

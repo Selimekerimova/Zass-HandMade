@@ -9,10 +9,11 @@ const oldPrice = document.querySelector(".oldPrice");
 const description = document.querySelector(".desc");
 const photo = document.querySelector(".photo");
 const category = document.querySelector(".category");
+let body = document.querySelector("body");
 let searchInput = document.querySelector(".search");
 let base64;
-let id;
 let editElem;
+let id;
 let data;
 const BASE_URL = `https://zass-handmade-backend.onrender.com`;
 allSideMenu.forEach((item) => {
@@ -33,6 +34,18 @@ const sidebar = document.getElementById("sidebar");
 menuBar.addEventListener("click", function () {
   sidebar.classList.toggle("hide");
 });
+
+// dark mode
+const switchMode = document.getElementById("switch-mode");
+
+switchMode.addEventListener("change", function () {
+  body.classList.toggle('dark');
+  localStorage.setItem('mode',body.classList)
+});
+if (localStorage.getItem("mode") != "") {
+  body.classList.add(localStorage.getItem("mode"));
+}
+
 
 // get all data
 async function getAllData(endpoint) {
@@ -182,3 +195,7 @@ searchInput.addEventListener("input", function (e) {
   );
   drawTable(filtered);
 });
+
+// if(!localStorage.getItem("isAdmin")){
+//   window.location.href="../../../signup-login.html"
+// }

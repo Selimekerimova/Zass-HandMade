@@ -44,7 +44,7 @@
     <header>
       <div class="container">
         <div class="header">
-          <a href="./index.html" class="logo">
+          <a href="./home.html" class="logo">
             <img
               src="./assets/img/logo_ZASS_transparent.png"
               alt="logo"
@@ -54,17 +54,17 @@
           </a>
           <nav>
             <ul>
-              <li class="active"><a href="./index.html">Home</a></li>
+              <li class="active"><a href="./home.html">Home</a></li>
               <li><a href="./allProducts.html">Shop</a></li>
               <li>
-                <a href="./index.html">Blog </a>
+                <a href="./home.html">Blog </a>
                 <ul class="drapdown">
                   <li><a href="#">Masonry No Sidebar</a></li>
                   <li><a href="#">Blog Standard</a></li>
                 </ul>
               </li>
               <li>
-                <a href="#">Pages</a>
+                <a href="about.html">Pages</a>
                 <ul class="drapdown">
                   <li><a href="about.html">About us</a></li>
                   <li><a href="whatWeDo.html">What We Do</a></li>
@@ -72,8 +72,6 @@
                   <li><a href="signup-login.html">My Account </a></li>
                 </ul>
               </li>
-              <li><a href="#">Porfolio</a></li>
-              <li><a href="#">Elements</a></li>
               <div class="icons">
                 <li>
                   <a href="./signup-login.html"
@@ -82,26 +80,15 @@
                 </li>
 
                 <li>
-                  <a href="./signup-login.html"
-                    ><i class="fa-solid fa-heart"
-                      ><sup class="favCount">0</sup></i
-                    ></a
-                  >
+                  <a href="./fav.html"><i class="fa-solid fa-heart"></i></a>
                 </li>
 
                 <li>
-                  <a href="signup-login.html"
+                  <a href="./basket.html"
                     ><i class="fa-solid fa-bag-shopping"
                       ><sup class="basketCount">0</sup></i
                     ></a
                   >
-                </li>
-
-                <li>
-                  <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </li>
-                <li>
-                  <a href="#"> <i class="fa-solid fa-list"></i></a>
                 </li>
               </div>
             </ul>
@@ -112,60 +99,167 @@
       </div>
     </header>
 
-    <!--product  -->
-    <div id="products">
-      <div class="container">
-        <div class="products">
-          <div class="cards">
-            <!-- <div class="card">
-                <img src="./assets/img/home-03-1920x1028.jpg" alt="" />
-  
-                <div class="info-card">
-                  <h2>letter blocks</h2>
-                  <div class="productPrice">
-                    <p>$40.00</p>
-                    <p class="oldPrice">$40.00</p>
-                  </div>
-                  <div class="proses">
-                    <button class="addToCardBtn">add to card</button>
-                    <i class="fa-solid fa-eye"></i>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-  
-                </div>
-  
-              </div> -->
-          </div>
-          <!-- <button class="allProductBtn loadMore">Load more</button> -->
+    <div id="table">
+      <div class="table">
+        <div class="container">
+          <h1>Total Price : <span class="total">0</span></h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Count</th>
+                <th>Sub total</th>
+                <th>Category</th>
+                <th>Process</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
+                <td><img src="../assets/img/baby_cat.jpg" alt=""></td>
+                <td>toys</td>
+                <td>$150.00</td>
+                <td>$</td>
+                <td>baby</td>
+                <td>
+                  <button class="delete">Delete</button>
+                  <button class="edit">Edit</button>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
 
-    <!-- table -->
-    <div id="basketTable">
+     <!-- footer -->
+    <footer>
       <div class="container">
-        <table>
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Product Name</th>
-              <th>Product Price</th>
-              <th>Total Price</th>
-              <th>Proses</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <img src="" alt="" />
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="footer">
+          <div class="footer-top">
+            <nav>
+              <h3>Information</h3>
+              <ul>
+                <li>
+                  <a href="./about.html"><i class="fa-solid fa-file-lines"></i>About Us</a>
+                </li>
+                <li>
+                  <a href="./home.html"
+                    ><i class="fa-solid fa-file-lines"></i>Delivery
+                    Information</a
+                  >
+                </li>
+                <li>
+                  <a href="./home.html"
+                    ><i class="fa-solid fa-file-lines"></i>Terms & Conditions</a
+                  >
+                </li>
+                <li>
+                  <a href="./contact.html"
+                    ><i class="fa-solid fa-file-lines"></i>Contact Us</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav>
+              <h3>Extras</h3>
+              <ul>
+                <li>
+                  <a
+                    ><i class="fa-solid fa-file-lines"></i>Our Brands</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ><i class="fa-solid fa-file-lines"></i>Special Offers</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ><i class="fa-solid fa-file-lines"></i>Gift Vouchers</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ><i class="fa-solid fa-file-lines"></i>Affiliates</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav>
+              <h3>Have a Question?</h3>
+              <ul>
+                <li>
+                  <a
+                    ><i class="fa-solid fa-clock"></i>Monday - Friday: 09:00 -
+                    18:30</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ><i class="fa-solid fa-location-pin"></i>409 Mladost
+                    District, Sofia Bulgaria</a
+                  >
+                </li>
+                <li>
+                  <a href="tel:+359 2 123 456"
+                    ><i class="fa-solid fa-phone"></i>+359 2 123 456</a
+                  >
+                </li>
+                <li>
+                  <a href="tel:+359 2 654 321"
+                    ><i class="fa-solid fa-blender-phone"></i>+359 2 654 321</a
+                  >
+                </li>
+                <li>
+                  <a href="mailto:shop@zass.com"
+                    ><i class="fa-solid fa-envelope"></i>shop@zass.com</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <nav>
+              <h3>Payment Options</h3>
+              <div class="cardIcons">
+                <a href="./card-info.html"
+                  ><img src="./assets/img/card img/card.png" alt="card image"
+                /></a>
+                <a href="card-info.html"
+                  ><img src="./assets/img/card img/cirrus.png" alt="card image"
+                /></a>
+                <a href="./card-info.html">
+                  <img src="./assets/img/card img/maestro.png" alt="card image"
+                /></a>
+                <a href="./card-info.html"
+                  ><img src="./assets/img/card img/paypal.png" alt="card image"
+                /></a>
+                <a href="./card-info.html"
+                  ><img src="./assets/img/card img/symbol.png" alt="card image"
+                /></a>
+                <a href="./card-info.html"
+                  ><img src="./assets/img/card img/visa.png" alt="card image"
+                /></a>
+              </div>
+              <p>You can also place custom seals code here if you wish.</p>
+            </nav>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-pinterest"></i>
+          </div>
+          <p>
+            Zass theme by
+            <a href="https://themeforest.net" target="_blank">theAlThemist </a>|
+            © 2019 All rights reserved!
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
