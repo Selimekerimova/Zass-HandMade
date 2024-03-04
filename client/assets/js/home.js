@@ -195,7 +195,7 @@ categoryLinkElem.forEach((item) =>
       window.location.href = `./category.html?id=${productId}`;
     } else {
       console.log(item.textContent);
-      console.log("sef");
+      
     }
     if (item.textContent === "ART") {
       productId = "art";

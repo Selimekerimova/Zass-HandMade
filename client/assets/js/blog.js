@@ -4,7 +4,7 @@ async function getAllData(endpoint) {
   try {
     let res = await axios(`${BASE_URL}/${endpoint}`);
     // console.log(res.data);
-    drawCard(res.data.substring(0,5));
+    drawCard(res.data.slice(0, 5));
   } catch (error) {
     console.log(error);
   }

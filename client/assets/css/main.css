@@ -1081,6 +1081,7 @@ header .header nav .fa-bars {
 
 #table {
   background-image: url("../img/back_landing.jpg");
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   height: 100vh;
