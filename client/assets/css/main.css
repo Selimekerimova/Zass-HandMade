@@ -985,6 +985,9 @@ header .header nav .fa-bars {
   transition: all 0.3s linear 0s;
 }
 .our-team-section .team-cards .our-team .pic img {
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: auto;
   border-radius: 50%;

@@ -8,7 +8,6 @@ let favProducts = getProductLocaleStorage();
 let basketProduct = getToBasketProductLocaleStorage();
 // console.log(id);
 let filtered;
-// let data;
 // get data
 async function getAllData(endpoint) {
   try {
@@ -50,7 +49,7 @@ function drawCard(data) {
     image.src = `${element.img}`;
     productName.innerHTML = `${element.productName.substring(0, 20)}...`;
     productPrice.innerHTML = `$${element.price}`;
-    productOldPrice.innerHTML = `${element.oldPrice}`;
+   productOldPrice.innerHTML = element.oldPrice ? `$${element.oldPrice}` : "";
     addToCardBtn.innerHTML = "Add to card";
 
     cardDiv.className = "card";
@@ -112,24 +111,6 @@ function drawCard(data) {
   });
 }
 
-// category
-// async function sortProduct(endpoint) {
-//   let filtered;
-//   // let res = await axios(`${BASE_URL}/${endpoint}`);
-//   // console.log(res.data)
-//   // if (id == "baby") {
-//   //   filtered = res.data.filter((item) => item.category == "baby");
-//   //   drawCard(filtered);
-//   // } else if (id == "art") {
-//   //   filtered = res.data.filter((item) => item.category == "art");
-//   //   drawCard(filtered);
-//   // } else if (id == "home") {
-//   //   filtered = res.data.filter((item) => item.category == "home");
-//   //   drawCard(filtered);
-//   // }
-//   // console.log("filtered");
-// }
-// sortProduct("products");
 // setLocaleStorage
 function setProductLocaleStorage(arr) {
   localStorage.setItem("fav", JSON.stringify(arr));

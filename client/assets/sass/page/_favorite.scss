@@ -54,33 +54,9 @@ body {
   }
 }
 #products {
-  // background-image: url("../img/zass_main_hero33.jpg");
-  // background-attachment: fixed;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
   padding: 6rem 0;
   position: relative;
-  // &::after {
-  //   background-image: url("../img/ripoff_flip.png");
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  //   height: 100px;
-  //   position: absolute;
-  //   top: -1px;
-  //   width: 100%;
-  //   content: "";
-  // }
-  // &::before {
-  //   background-image: url("../img/ripoff.png");
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  //   height: 100px;
-  //   position: absolute;
-  //   bottom: 0;
-  //   width: 100%;
-  //   content: "";
-  // }
+  
   .products {
     padding-top: 7rem;
     display: flex;

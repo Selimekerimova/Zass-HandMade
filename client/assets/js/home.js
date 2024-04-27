@@ -43,7 +43,6 @@ var swiper = new Swiper(".mySwiper", {
   keyboard: true,
 });
 
-
 // scroll btn
 window.addEventListener("scroll", function () {
   scrollBtn.classList.toggle("scrollBtnShow", scrollY > 400);
@@ -75,7 +74,7 @@ async function getAllTeam(endpoint) {
   try {
     let res = await axios(`${BASE_URL}/${endpoint}`);
     // console.log(res.data);
-   
+
     drawTeamCard(res.data);
   } catch (error) {
     console.log(error);
@@ -102,9 +101,8 @@ function drawCard(data) {
 
     image.src = `${element.img}`;
     productName.innerHTML = `${element.productName}`;
-    productPrice.innerHTML = `$${element.price}  - - - -`;
-    productOldPrice.innerHTML =
-      `$${element.oldPrice}` || `$${element.oldPrice}`;
+    productPrice.innerHTML = `$${element.price} `;
+    productOldPrice.innerHTML = element.oldPrice ? `$${element.oldPrice}` : "";
     productDescription.innerHTML = `${element.description.substring(
       0,
       300
@@ -195,7 +193,6 @@ categoryLinkElem.forEach((item) =>
       window.location.href = `./category.html?id=${productId}`;
     } else {
       console.log(item.textContent);
-      
     }
     if (item.textContent === "ART") {
       productId = "art";

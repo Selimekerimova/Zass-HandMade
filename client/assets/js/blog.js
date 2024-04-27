@@ -14,14 +14,19 @@ getAllData("products");
 function drawCard(data) {
   blogCards.innerHTML = "";
   data.forEach((element) => {
-    blogCards.innerHTML += `
-    <div class="card text-left">
-                  <img src="${element.img}" alt="">
-                  <div class="card-body">
-                    <h4 class="card-title">${element.productName}</h4>
-                    <p class="card-text">${element.description}</p>
-                  </div>
-                </div>
-    `;
+    let cardDivElem=document.createElement("div")
+    let image=document.createElement("img")
+    let cardBody=document.createElement("div")
+    let productName=document.createElement("h4")
+    let description=document.createElement("p")
+
+    cardDivElem.className="card text-left"
+    cardBody.className="card-body"
+    productName.className="card-title"
+    description.className="card-text"
+
+  
+    cardDivElem.append(image,cardBody,productName,description)
+    blogCards.append(cardDivElem)
   });
 }

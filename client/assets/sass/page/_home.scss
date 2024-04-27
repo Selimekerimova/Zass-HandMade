@@ -631,6 +631,8 @@
           transition: all 0.3s linear 0s;
         }
         img {
+          aspect-ratio: 1/1;
+          object-fit: cover;
           width: 100%;
           height: auto;
           border-radius: 50%;

@@ -65,9 +65,8 @@ function drawCard(data) {
 
     image.src = `${element.img}`;
     productName.innerHTML = `${element.productName}`;
-    productPrice.innerHTML = `$${element.price}  - - - -`;
-    productOldPrice.innerHTML =
-      `$${element.oldPrice}` || `$${element.oldPrice}`;
+    productPrice.innerHTML = `$${element.price}  `;
+    productOldPrice.innerHTML = element.oldPrice ? `$${element.oldPrice}` : "";
     productDescription.innerHTML = `${element.description.substring(
       0,
       300

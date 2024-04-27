@@ -48,8 +48,8 @@ function drawDetailCard(data) {
 
       image.src = `${element.img}`;
       productName.innerHTML = `${element.productName}`;
-      productPrice.innerHTML = `$${element.price}  - - - -`;
-      productOldPrice.innerHTML = `$${element.oldPrice}`;
+      productPrice.innerHTML = `$${element.price}  `;
+      productOldPrice.innerHTML = element.oldPrice ? `$${element.oldPrice}` : "";
       productDescription.innerHTML = `${element.description}`;
       favIcon.innerHTML = "Add to wishlist";
 

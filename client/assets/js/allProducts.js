@@ -38,8 +38,7 @@ function drawCard(data) {
     image.src = `${element.img}`;
     productName.innerHTML = `${element.productName.substring(0, 20)}...`;
     productPrice.innerHTML = `$${element.price}`;
-    // productOldPrice.innerHTML = `${element.oldPrice}`;
-    productOldPrice.innerHTML = element.oldPrice ? element.oldPrice : "";
+    productOldPrice.innerHTML = element.oldPrice ? `$${element.oldPrice}` : "";
 
     addToCardBtn.innerHTML = "Add to card";
 
