@@ -369,7 +369,7 @@ header .header nav .fa-bars {
     display: flex;
     flex-direction: column;
     transition: all 0.7s;
-    height: 70vh;
+    height: 100vh;
     z-index: 3;
   }
   header .header nav ul li a {
@@ -466,7 +466,7 @@ header .header nav .fa-bars {
   background-position: center;
   height: 100px;
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   z-index: 7;
   width: 100%;
   content: "";

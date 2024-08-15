@@ -141,7 +141,7 @@ header {
                 color: #fff;
                 transition: all 0.5s;
                 position: relative;
-                .favCount{
+                .favCount {
                   width: 25px;
                   height: 25px;
                   font-size: 10px;
@@ -169,7 +169,7 @@ header {
                   background-color: #f3a395;
                   color: #fff;
                 }
-               
+
                 &:hover {
                   color: #f3a395;
                 }
@@ -223,7 +223,6 @@ header {
         width: 100%;
 
         ul {
-          // margin-top: 200px;
           padding: 1rem 0;
           display: none;
           position: absolute;
@@ -234,7 +233,7 @@ header {
           display: flex;
           flex-direction: column;
           transition: all 0.7s;
-          height: 70vh;
+          height: 100vh;
           z-index: 3;
           li {
             a {
